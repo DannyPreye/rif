@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }) {
                 <title>{METADATA.title}</title>
                 <meta rel="icon" href="/assets/images/logo.png" />
             </Head>
-            <Component {...pageProps} />;
+            <Component {...pageProps} />
         </>
     );
 }

@@ -1,6 +1,10 @@
+import moment from "moment";
+import { RichText } from "prismic-dom";
+
 const { default: Link } = require("next/link");
 
 const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
+    const convertRichTextToPlain = RichText?.asText(content);
     return (
         <div className="col-xl-4 col-lg-4">
             <div
@@ -20,16 +24,16 @@ const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
                 <div className="blog-contant">
                     <div className="header-link-btn">
                         <Link href={link || ""} className="btn-1">
-                            {createdDate}
+                            {moment(createdDate).format("MMMM DD, YYYY")}
                             <span></span>
                         </Link>
                     </div>
                     <div className="comments">
                         <ul>
-                            <li>
+                            {/* <li>
                                 <i className="flaticon-user"></i>{" "}
                                 <span> {writer}</span>
-                            </li>
+                            </li> */}
                             {/* <li>
                                 <i className="flaticon-bubble-chat"></i>{" "}
                                 <span> Comment</span>
@@ -39,7 +43,13 @@ const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
                     <Link href={link || "#"} className="hover-content">
                         {title}
                     </Link>
-                    <p>{content}</p>
+                    <p>
+                        {convertRichTextToPlain
+                            ?.split(" ")
+                            ?.slice(0, 8)
+                            ?.join(" ")}
+                        ...
+                    </p>
                 </div>
                 <div className="blog-btn">
                     <Link href={link || "#"}>

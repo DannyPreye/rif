@@ -7,7 +7,7 @@ import JoinCommunity from "./Join-Community";
 import LatestBlog from "./LatestBlog";
 import Parners from "./Parners";
 
-const index = () => {
+const index = ({ posts }) => {
     return (
         <>
             <HeroSection />
@@ -15,7 +15,7 @@ const index = () => {
             <Quote />
             <WhatWeDo />
             <JoinCommunity />
-            <LatestBlog />
+            <LatestBlog posts={posts} />
             <Parners />
         </>
     );

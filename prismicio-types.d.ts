@@ -19,6 +19,39 @@ interface BlogDocumentData {
    */
   title: prismic.KeyTextField;
   /**
+   * Featured Image field in *Blog*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  featured_image: prismic.ImageField<never>;
+  /**
+   * Content field in *Blog*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.content
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  content: prismic.RichTextField;
+  /**
+   * Category field in *Blog*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  category: prismic.ContentRelationshipField;
+  /**
    * Slice Zone field in *Blog*
    *
    * - **Field Type**: Slice Zone
@@ -29,12 +62,45 @@ interface BlogDocumentData {
    *
    */
   slices: prismic.SliceZone<BlogDocumentDataSlicesSlice>;
+  /**
+   * Description field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.description
+   * - **Tab**: Meta Data
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  description: prismic.KeyTextField;
+  /**
+   * Meta title field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.meta_title
+   * - **Tab**: Meta Data
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_title: prismic.KeyTextField;
+  /**
+   * Meta Image field in *Blog*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.meta_image
+   * - **Tab**: Meta Data
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  meta_image: prismic.ImageField<never>;
 }
 /**
  * Slice for *Blog → Slice Zone*
  *
  */
-type BlogDocumentDataSlicesSlice = BlogQuoteSlice;
+type BlogDocumentDataSlicesSlice = never;
 /**
  * Blog document from Prismic
  *
@@ -47,7 +113,19 @@ type BlogDocumentDataSlicesSlice = BlogQuoteSlice;
 export type BlogDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, "blog", Lang>;
 /** Content for Blog Category documents */
-type BlogCategoryDocumentData = Record<string, never>;
+interface BlogCategoryDocumentData {
+  /**
+   * Category Title field in *Blog Category*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_category.category_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  category_title: prismic.KeyTextField;
+}
 /**
  * Blog Category document from Prismic
  *
@@ -65,20 +143,56 @@ export type BlogCategoryDocument<Lang extends string = string> =
   >;
 export type AllDocumentTypes = BlogDocument | BlogCategoryDocument;
 /**
+ * Primary content in BlogContent → Primary
+ *
+ */
+interface BlogContentSliceDefaultPrimary {
+  /**
+   * Content field in *BlogContent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_content.primary.content
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  content: prismic.RichTextField;
+}
+/**
+ * Default variation for BlogContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BlogContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogContentSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *BlogContent*
+ *
+ */
+type BlogContentSliceVariation = BlogContentSliceDefault;
+/**
+ * BlogContent Shared Slice
+ *
+ * - **API ID**: `blog_content`
+ * - **Description**: `BlogContent`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BlogContentSlice = prismic.SharedSlice<
+  "blog_content",
+  BlogContentSliceVariation
+>;
+/**
  * Primary content in BlogQuote → Primary
  *
  */
 interface BlogQuoteSliceDefaultPrimary {
-  /**
-   * Quote field in *BlogQuote → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_quote.primary.quote
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  quote: prismic.RichTextField;
   /**
    * Author field in *BlogQuote → Primary*
    *
@@ -89,6 +203,16 @@ interface BlogQuoteSliceDefaultPrimary {
    *
    */
   author: prismic.KeyTextField;
+  /**
+   * Content field in *BlogQuote → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_quote.primary.content
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  content: prismic.KeyTextField;
 }
 /**
  * Default variation for BlogQuote Slice
@@ -135,6 +259,10 @@ declare module "@prismicio/client" {
       BlogCategoryDocumentData,
       BlogCategoryDocument,
       AllDocumentTypes,
+      BlogContentSliceDefaultPrimary,
+      BlogContentSliceDefault,
+      BlogContentSliceVariation,
+      BlogContentSlice,
       BlogQuoteSliceDefaultPrimary,
       BlogQuoteSliceDefault,
       BlogQuoteSliceVariation,

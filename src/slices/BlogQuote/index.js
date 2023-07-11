@@ -4,14 +4,12 @@
  * @param {BlogQuoteProps}
  */
 const BlogQuote = ({ slice }) => {
-  return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for blog_quote (variation: {slice.variation}) Slices
-    </section>
-  );
+    console.log(slice);
+    return (
+        <blockquote>
+            “{slice.primary.content}”<span>{slice.primary.author}</span>
+        </blockquote>
+    );
 };
 
 export default BlogQuote;

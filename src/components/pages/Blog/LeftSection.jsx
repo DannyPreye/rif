@@ -1,6 +1,9 @@
+import moment from "moment";
+import Link from "next/link";
 import React from "react";
 
-const LeftSection = () => {
+const LeftSection = ({ categories, recentPosts }) => {
+    console.log(categories);
     return (
         <div className="col-xl-4 col-lg-4">
             <div className="causes-details-card event-details-card">
@@ -16,7 +19,15 @@ const LeftSection = () => {
                 </div>
                 <div className="causes-categories">
                     <ul>
-                        <li>
+                        {categories?.map((category) => (
+                            <li key={category.id}>
+                                <a href="events-details.html">
+                                    <i className="flaticon-angle-right"></i>
+                                    {category.data.category_title}
+                                </a>
+                            </li>
+                        ))}
+                        {/* <li>
                             <a href="events-details.html">
                                 <i className="flaticon-angle-right"></i>
                                 Charity
@@ -51,17 +62,20 @@ const LeftSection = () => {
                                 <i className="flaticon-angle-right"></i>
                                 Health
                             </a>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>
 
             <div className="causes-details-card">
                 <div className="causes-details-title">
-                    <h3>Recent Article</h3>
+                    <h3>Related Blog</h3>
                 </div>
                 <div className="causes-categories blog-recent-categories">
-                    <div className="blog-recent">
+                    {recentPosts?.map((post) => (
+                        <RecentPost key={post?.id} />
+                    ))}
+                    {/* <div className="blog-recent">
                         <div className="blog-recent-image">
                             <img
                                 src="/assets/images/gallery/bd1.png"
@@ -102,7 +116,7 @@ const LeftSection = () => {
                             </a>
                             <p>Apr 17, 2022</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
@@ -125,4 +139,17 @@ const LeftSection = () => {
     );
 };
 
+const RecentPost = ({ image, alt, title, date, link }) => {
+    return (
+        <div className="blog-recent">
+            <div className="blog-recent-image">
+                <img src={image} alt={alt} />
+            </div>
+            <div className="blog-recent-info">
+                <Link href={link || "#"}>{title}</Link>
+                <p>{moment(date).format("MM DD, YYYY")}</p>
+            </div>
+        </div>
+    );
+};
 export default LeftSection;

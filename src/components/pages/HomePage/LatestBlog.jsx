@@ -1,6 +1,8 @@
 import Link from "next/link";
+import EachBlog from "../Blog/EachBlog";
 
-const LatestBlog = () => {
+const LatestBlog = ({ posts }) => {
+    console.log(posts);
     return (
         <section className="blog">
             <div className="blank"></div>
@@ -21,87 +23,21 @@ const LatestBlog = () => {
                             </h3>
                         </div>
                     </div>
-                    <EachBlog
-                        img={"assets/images/gallery/blog-01.png"}
-                        writer={"Admin"}
-                        title={"How does the malnution affect children?"}
-                        content={
-                            "Aellentesque porttitor lacus quis enim varius sed efficitur..."
-                        }
-                        createdDate={"20 Feb 2022"}
-                    />
-                    <EachBlog
-                        img={"assets/images/gallery/blog-01.png"}
-                        writer={"Admin"}
-                        title={"How does the malnution affect children?"}
-                        content={
-                            "Aellentesque porttitor lacus quis enim varius sed efficitur..."
-                        }
-                        createdDate={"20 Feb 2022"}
-                    />
-                    <EachBlog
-                        img={"assets/images/gallery/blog-01.png"}
-                        writer={"Admin"}
-                        title={"How does the malnution affect children?"}
-                        content={
-                            "Aellentesque porttitor lacus quis enim varius sed efficitur..."
-                        }
-                        createdDate={"20 Feb 2022"}
-                    />
+                    {posts.map((post) => (
+                        <EachBlog
+                            key={post.id}
+                            img={post?.data?.featured_image?.url}
+                            alt={post?.data?.featured_image?.alt}
+                            writer={"Admin"}
+                            title={post?.data?.title}
+                            content={post.data.content}
+                            createdDate={"20 Feb 2022"}
+                            link={`/blog/${post.data.category.slug}/${post.uid}`}
+                        />
+                    ))}
                 </div>
             </div>
         </section>
-    );
-};
-
-const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
-    return (
-        <div className="col-xl-4 col-lg-4">
-            <div
-                className="causes-card wow fadeInUp animated"
-                data-wow-delay="600ms"
-                data-wow-duration="1500ms"
-                style={{
-                    visibility: " visible",
-                    animationDuration: "1500ms",
-                    animationDelay: " 600ms",
-                    animationName: "fadeInUp",
-                }}
-            >
-                <Link href={link || "#"} className="causes-image blog-image">
-                    <img src={img} alt={alt} />
-                </Link>
-                <div className="blog-contant">
-                    <div className="header-link-btn">
-                        <Link href={link || ""} className="btn-1">
-                            {createdDate}
-                            <span></span>
-                        </Link>
-                    </div>
-                    <div className="comments">
-                        <ul>
-                            <li>
-                                <i className="flaticon-user"></i>{" "}
-                                <span> {writer}</span>
-                            </li>
-                            {/* <li>
-                                <i className="flaticon-bubble-chat"></i>{" "}
-                                <span> Comment</span>
-                            </li> */}
-                        </ul>
-                    </div>
-                    <a href="blog-details.html" className="hover-content">
-                        {title}
-                    </a>
-                    <p>{content}</p>
-                </div>
-                <div className="blog-btn">
-                    <Link href={link || "#"}>
-                        Read More <i className="flaticon-arrow-right"></i>
-                    </Link>
-                </div>
-            </div>
-        </div>
     );
 };
 

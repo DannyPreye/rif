@@ -3,21 +3,15 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"quote": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Anim enim non non irure ea quis et duis dolor non est aliqua mollit aliqua anim. Ullamco laboris incididunt amet est fugiat. Adipisicing tempor voluptate cillum culpa."
-						}
-					}
-				]
-			},
 			"author": {
 				"__TYPE__": "FieldContent",
-				"value": "refer",
-				"type": "Text"
+				"type": "Text",
+				"value": "Darlene Robertson"
+			},
+			"content": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit amet sit purus tempor dui pharetra consequat nibh elit urna interdum viera quam a arcu duis quis lectus donec nulla aliquam sit fermentum morbi sed nisl molestie."
 			}
 		},
 		"items": []
