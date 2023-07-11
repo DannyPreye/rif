@@ -1,0 +1,21 @@
+{
+  "id": "blog",
+  "label": "Blog",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "title": {
+        "type": "Text",
+        "config": { "label": "Title", "placeholder": "" }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "blog_quote": { "type": "SharedSlice" } } }
+      }
+    }
+  }
+}

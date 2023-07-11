@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"quote": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Anim enim non non irure ea quis et duis dolor non est aliqua mollit aliqua anim. Ullamco laboris incididunt amet est fugiat. Adipisicing tempor voluptate cillum culpa."
+						}
+					}
+				]
+			},
+			"author": {
+				"__TYPE__": "FieldContent",
+				"value": "refer",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

@@ -25,9 +25,15 @@ const Footer = () => {
                                         </div>
                                         <div className="widget_content">
                                             <p>
-                                                Lorem ipsum dolor rtame consect
-                                                pisicing sed do eiusmod tempor
-                                                incididunt ut labore.
+                                                This foundation was born out of
+                                                a strategic rethink of the Warri
+                                                Kingdom from the lens of its
+                                                people, its socio-economic
+                                                potential and the limitless
+                                                possibilities for growth and
+                                                advancement via education and
+                                                upskilling across various
+                                                demographics.
                                             </p>
                                         </div>
                                         <div className="widget_media">
@@ -126,20 +132,20 @@ const Footer = () => {
                                         </div>
                                         <div className="widget_content">
                                             <ul className="links_list right">
-                                                <li>
+                                                {/* <li>
                                                     4140 Parker Rd. Allentown,
                                                     New Mexico
-                                                </li>
+                                                </li> */}
                                                 <li>
-                                                    <a href="mailto:jennings@example.com">
+                                                    <a href="mailto:admin2@atuwateseii.com">
                                                         <i className="flaticon-email"></i>{" "}
-                                                        jennings@example.com
+                                                        admin2@atuwateseii.com
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="tel:081243256">
+                                                    <a href="tel:+2348173265698">
                                                         <i className="flaticon-phone-call"></i>
-                                                        (208) 555-0112
+                                                        (+234)817 3265 698
                                                     </a>
                                                 </li>
                                                 <li>
@@ -149,7 +155,7 @@ const Footer = () => {
                                                             target="_blank"
                                                             className="btn-1 btn-alt"
                                                         >
-                                                            Donate Now{" "}
+                                                            Become A Volunteer{" "}
                                                             <span></span>
                                                         </a>
                                                     </div>
@@ -167,7 +173,11 @@ const Footer = () => {
                 <div className="auto_container">
                     <div className="bottom_inner  p_relative">
                         <div className="copyright">
-                            <p> SaveUs © 2023. All Rights Reserved.</p>
+                            <p>
+                                {" "}
+                                Royal Iwere Foundation ©{" "}
+                                {new Date().getFullYear}. All Rights Reserved.
+                            </p>
                         </div>
                     </div>
                 </div>
