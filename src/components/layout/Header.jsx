@@ -1,4 +1,5 @@
 import { menus } from "@/lib/constants";
+import { Instagram } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -33,23 +34,16 @@ const Header = ({ setMenuOpen, isVisible }) => {
                                             admin2@atuwateseii.com
                                         </a>
                                     </li>
-                                    {/* <li>
-                                        <img
-                                            src="/assets/images/icons/location.png"
-                                            alt="icon"
-                                        />{" "}
-                                        6391 Elgin St. Celina, Delaware 10299
-                                    </li> */}
                                 </ul>
                             </div>
                             <div className="header_top_right">
                                 <div className="header_right_info">
                                     <ul className="top_right">
                                         <li>
-                                            <a href="#">
+                                            <Link href="https://www.linkedin.com/company/royal-iwere-foundation">
                                                 {" "}
                                                 <i className="flaticon-facebook-app-symbol"></i>
-                                            </a>
+                                            </Link>
                                         </li>
                                         <li>
                                             <a href="#">
@@ -62,8 +56,8 @@ const Header = ({ setMenuOpen, isVisible }) => {
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
-                                                <i className="flaticon-pinterest"></i>
+                                            <a href="https://www.instagram.com/reel/CttIzqSgqf0/">
+                                                <Instagram size={20} />
                                             </a>
                                         </li>
                                     </ul>

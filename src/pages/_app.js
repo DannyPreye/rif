@@ -16,7 +16,15 @@ import "../../public/assets/css/responsive.css";
 import "@/styles/globals.css";
 import Head from "next/head";
 import METADATA from "@/METADATA";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Aos from "aos";
 export default function App({ Component, pageProps }) {
+    useEffect(() => {
+        AOS.init({ once: true, duration: 1500 });
+        Aos.refresh();
+    }, []);
     return (
         <>
             <Head>

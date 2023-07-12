@@ -37,13 +37,17 @@ const Blog = ({ posts, totalPages }) => {
                                         </Link>
                                     </li>
                                 ))}
-                                <li>
-                                    <Link
-                                        href={`/blog/page/${currentPage + 1}`}
-                                    >
-                                        <i class="flaticon-right-arrow-1"></i>
-                                    </Link>
-                                </li>
+                                {currentPage < totalPages && (
+                                    <li>
+                                        <Link
+                                            href={`/blog/page/${
+                                                currentPage + 1
+                                            }`}
+                                        >
+                                            <i class="flaticon-right-arrow-1"></i>
+                                        </Link>
+                                    </li>
+                                )}
                             </ul>
                         </div>
                     </div>

@@ -29,14 +29,17 @@ const WhatWeDo = () => {
                                 title={`Combating militancy to promote positive youth engagement`}
                             />
                             <EachGoal
+                                delay={100}
                                 icon={"icon-service-icon-02"}
                                 title={`Job creation`}
                             />
                             <EachGoal
+                                delay={200}
                                 icon={"icon-service-icon-03"}
                                 title={`Early childhood development`}
                             />
                             <EachGoal
+                                delay={300}
                                 icon={"icon-service-icon-04"}
                                 title={`Enabling platforms for entrepreneurs`}
                             />
