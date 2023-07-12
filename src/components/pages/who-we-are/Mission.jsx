@@ -6,10 +6,14 @@ const Mission = () => {
         <section class="about home-three-about">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-6">
-                        <div class="about-left-container">
+                    <div class="col-xl-6 ">
+                        <div
+                            data-aos="zoom-right-in"
+                            class="about-left-container"
+                        >
                             <div
-                                class="about-image-1 relative overflow-hidden wow fadeInUp animated bg-red-500"
+                                class="about-image-1 relative overflow-hidden wow fadeInUp
+                                animated "
                                 style={{
                                     visibility: "visible",
                                     animationName: "fadeInUp",
@@ -22,6 +26,8 @@ const Mission = () => {
                                 />
                             </div>
                             <div
+                                data-aos="zoom-in-right"
+                                data-aos-delay="100"
                                 class="about-left-intro paroller"
                                 style={{
                                     transform:
@@ -42,7 +48,7 @@ const Mission = () => {
                         </div>
                     </div>
 
-                    <div class="col-xl-6">
+                    <div data-aos="zoom-out-left" class="col-xl-6">
                         <div class="about-right-container">
                             <div class="about-right-container-inner">
                                 <div class="common-title">
@@ -63,7 +69,7 @@ const Mission = () => {
                                     Internet tend to repeat predefined chunks as
                                     necessary for Millions of people
                                 </p> */}
-                                <div class="about-bnt-group">
+                                <div data-aos="" class="about-bnt-group">
                                     <div class="header-link-btn">
                                         <a
                                             href="/contact-us"

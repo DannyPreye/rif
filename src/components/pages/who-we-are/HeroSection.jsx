@@ -13,7 +13,7 @@ const HeroSection = () => {
             <div class="container">
                 <div class="row ">
                     <div class="col-xl-6">
-                        <div class="about-left-container">
+                        <div data-aos="fade-right" class="about-left-container">
                             <div
                                 class="home-two-about-image-top left-10 top-20 relative overflow-hidden paroller w-[150px] h-[150px] rounded-full"
                                 style={{
@@ -62,7 +62,7 @@ const HeroSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6">
+                    <div data-aos="fade-left" class="col-xl-6">
                         <div class="home-two-about-wrapper">
                             <div class="about-right-container">
                                 <div class="common-title">

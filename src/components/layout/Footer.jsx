@@ -1,3 +1,4 @@
+import { Instagram } from "lucide-react";
 import React from "react";
 
 const Footer = () => {
@@ -38,27 +39,35 @@ const Footer = () => {
                                         </div>
                                         <div className="widget_media">
                                             <ul>
-                                                <li>
+                                                {/* <li>
                                                     <a href="#0">
                                                         {" "}
                                                         <i className="flaticon-facebook-app-symbol"></i>
                                                     </a>
-                                                </li>
-                                                <li>
+                                                </li> */}
+                                                {/* <li>
                                                     <a href="#0">
                                                         <i className="flaticon-twitter"></i>
                                                     </a>
-                                                </li>
+                                                </li> */}
                                                 <li>
-                                                    <a href="#0">
+                                                    <a href="https://www.linkedin.com/company/royal-iwere-foundation">
                                                         <i className="flaticon-linkedin"></i>
                                                     </a>
                                                 </li>
                                                 <li>
+                                                    <a href="https://www.instagram.com/royaliwerefoundation/">
+                                                        <Instagram
+                                                            size={16}
+                                                            className="z-10"
+                                                        />
+                                                    </a>
+                                                </li>
+                                                {/* <li>
                                                     <a href="#0">
                                                         <i className="flaticon-pinterest"></i>
                                                     </a>
-                                                </li>
+                                                </li> */}
                                             </ul>
                                         </div>
                                     </div>

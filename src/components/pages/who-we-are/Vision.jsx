@@ -7,7 +7,10 @@ const Vision = () => {
             <div class="container ">
                 <div class="row flex-row-reverse">
                     <div class="col-xl-6">
-                        <div class="about-left-container">
+                        <div
+                            data-aos="zoom-right-in"
+                            class="about-left-container"
+                        >
                             <div
                                 class="about-image-1 relative overflow-hidden wow fadeInUp animated bg-red-500"
                                 style={{
@@ -42,7 +45,7 @@ const Vision = () => {
                         </div>
                     </div>
 
-                    <div class="col-xl-6">
+                    <div data-aos="zoom-in-left" class="col-xl-6">
                         <div class="about-right-container">
                             <div class="about-right-container-inner">
                                 <div class="common-title">

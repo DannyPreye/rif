@@ -83,7 +83,6 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => (
                                         </Link>
                                     </li>
                                 ))}
-                            
                             </ul>
                         </div>
                     </div>
@@ -92,8 +91,8 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => (
                         <ul>
                             {/* <li>Chicago 12, Melborne City, USA</li> */}
                             <li>
-                                <a href="tel:+8801682648101">
-                                    +234 01682648101
+                                <a href="tel:+2348173265698">
+                                    (+234)817 3265 698
                                 </a>
                             </li>
                             <li>
@@ -106,29 +105,14 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => (
                     <div className="social-links">
                         <ul className="clearfix">
                             <li>
-                                <a href="index.html">
-                                    <span className="fab fa-twitter"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html">
-                                    <span className="fab fa-facebook-square"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html">
-                                    <span className="fab fa-pinterest-p"></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html">
+                                <Link href="https://www.linkedin.com/company/royal-iwere-foundation">
                                     <span className="fab fa-instagram"></span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="index.html">
-                                    <span className="fab fa-youtube"></span>
-                                </a>
+                                <Link href="https://www.instagram.com/royaliwerefoundation/">
+                                    <span className="fab fa-linkedin"></span>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -166,7 +150,11 @@ er_vertical"
 
 const Newsletter = () => {
     return (
-        <section className="news_letter">
+        <section
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-center"
+            className="news_letter"
+        >
             <div className="auto_container">
                 <div className="news_letter_content">
                     <div className="row">

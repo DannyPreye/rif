@@ -1,5 +1,6 @@
 import { menus } from "@/lib/constants";
 import { Instagram } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -12,20 +13,17 @@ const Header = ({ setMenuOpen, isVisible }) => {
                 }`}
             >
                 <div className="header-lower">
-                    {
-                        // header-top
-                    }
                     <div className="header_top">
                         <div className="auto_container">
                             <div className="header_top_left">
                                 <ul className="top_left">
                                     <li>
-                                        <a href="tel:081243256">
+                                        <a href="tel:+2348173265698">
                                             <i
                                                 className="flaticon-phone-call
                                     "
                                             ></i>
-                                            (+234) 555-0112
+                                            (+234)817 3265 698
                                         </a>
                                     </li>
                                     <li>
@@ -38,26 +36,26 @@ const Header = ({ setMenuOpen, isVisible }) => {
                             </div>
                             <div className="header_top_right">
                                 <div className="header_right_info">
-                                    <ul className="top_right">
-                                        <li>
-                                            <Link href="https://www.linkedin.com/company/royal-iwere-foundation">
+                                    <ul className="top_right items-center">
+                                        {/* <li>
+                                            <Link href="">
                                                 {" "}
                                                 <i className="flaticon-facebook-app-symbol"></i>
                                             </Link>
-                                        </li>
-                                        <li>
+                                        </li> */}
+                                        {/* <li>
                                             <a href="#">
                                                 <i className="flaticon-twitter"></i>
                                             </a>
-                                        </li>
+                                        </li> */}
                                         <li>
-                                            <a href="#">
+                                            <a href="https://www.linkedin.com/company/royal-iwere-foundation">
                                                 <i className="flaticon-linkedin"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://www.instagram.com/reel/CttIzqSgqf0/">
-                                                <Instagram size={20} />
+                                            <a href="https://www.instagram.com/royaliwerefoundation/">
+                                                <Instagram size={16} />
                                             </a>
                                         </li>
                                     </ul>
@@ -65,9 +63,6 @@ const Header = ({ setMenuOpen, isVisible }) => {
                             </div>
                         </div>
                     </div>
-                    {
-                        // header-top
-                    }
 
                     <div className="header_bottom p_relative">
                         <div className="logo__shape"></div>
@@ -76,17 +71,17 @@ const Header = ({ setMenuOpen, isVisible }) => {
                                 <div className="logo-box">
                                     <figure className="logo">
                                         <Link href="/">
-                                            <img
+                                            <Image
                                                 src="/assets/images/logo.png"
-                                                alt=""
+                                                alt="rif logo"
+                                                width={130}
+                                                height={90}
+                                                priority
                                             />
                                         </Link>
                                     </figure>
                                 </div>
                                 <div className="menu-area">
-                                    {
-                                        // Mobile Navigation Toggler
-                                    }
                                     <div
                                         onClick={() =>
                                             setMenuOpen((prev) => !prev)

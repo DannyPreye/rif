@@ -1,11 +1,12 @@
+import Link from "next/link";
 import React from "react";
 
 const OtherDetails = () => {
     return (
         <section className="contact-container">
             <div className="container">
-                <div className="row gap-[6rem] md:gap-0 ">
-                    <div className="col-xl-4 col-lg-4">
+                <div className="row  md:gap-0 justify-center">
+                    <div data-aos="fade-up-right" className="col-xl-4 col-lg-4">
                         <div
                             className="contact-containt wow fadeInLeft animated"
                             style={{
@@ -16,21 +17,21 @@ const OtherDetails = () => {
                             <h5>Quick Contact</h5>
                             <div className="contact-info">
                                 <div className="contact-info-left">
-                                    <a href="#">
+                                    <Link href="tel:+2348173265698">
                                         <i className="fa fa-phone"></i>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="contact-info-right">
                                     <p>Main Office</p>
-                                    <a href="tel:(+233)456-789-01">
-                                        (+234)456-789-01
-                                    </a>
+                                    <Link href="tel:+2348173265698">
+                                        (+234)817 3265 698
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="col-xl-4 col-lg-4">
+                    <div data-aos="fade-up-left" className="col-xl-4 col-lg-4">
                         <div
                             className="contact-containt wow fadeInUp animated"
                             style={{
@@ -41,21 +42,21 @@ const OtherDetails = () => {
                             <h5>Email Address</h5>
                             <div className="contact-info">
                                 <div className="contact-info-left">
-                                    <a href="#">
+                                    <a href="mailto:d.eyo-enoette@atuwateseii.com">
                                         <i className="fa fa-envelope"></i>
                                     </a>
                                 </div>
                                 <div className="contact-info-right">
                                     <p>Mail to</p>
-                                    <a href="mailto:info@example.com">
-                                        d.eyo-enoette@atuwateseii.com
-                                    </a>
+                                    <Link href="mailto:d.eyo-enoette@atuwateseii.com">
+                                        admin2@atuwateseii.com
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="col-xl-4 col-lg-4">
+                    {/* <div className="col-xl-4 col-lg-4">
                         <div
                             className="contact-containt wow fadeInRight animated"
                             style={{
@@ -78,7 +79,7 @@ const OtherDetails = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>

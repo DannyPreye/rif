@@ -1,10 +1,6 @@
 const EachGoal = ({ serviceNumber, title, content, icon, delay }) => {
     return (
-        <div
-            data-aos="fade-up"
-            data-aos-delay={delay || 100}
-            className="col-xl-4 col-lg-6 col-md-6"
-        >
+        <div data-aos="fade-up" className="col-xl-4 col-lg-6 col-md-6">
             <div
                 className="service-container wow fadeInUp animated"
                 data-wow-delay="00ms"

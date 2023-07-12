@@ -13,10 +13,10 @@ const How_rif = () => {
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="common-title whait-title">
-                            <h5>Origin</h5>
-                            <h3>How Did Rif Come To Be</h3>
+                            <h5>Our Origin</h5>
+                            <h3 data-aos="flip-up">How Did Rif Come To Be</h3>
                             <div className="text-white flex flex-col gap-2">
-                                <p className="text-white">
+                                <p data-aos="fade-up" className="text-white">
                                     <span className="font-bold text-white">
                                         Ogiame Atuwatse III
                                     </span>
@@ -24,7 +24,10 @@ const How_rif = () => {
                                     Warri and the 21st Olu of Warri declared in
                                     his coronation address to the world:
                                 </p>
-                                <blockquote className="opacity-1 text-white">
+                                <blockquote
+                                    data-aos="fade-up"
+                                    className="opacity-1 text-white"
+                                >
                                     “We will look to honour our women; we will
                                     encourage them, build them up and support
                                     them in realising their inestimable
@@ -43,7 +46,7 @@ const How_rif = () => {
                                     to our women today, you will no longer be
                                     invisible”
                                 </blockquote>
-                                <p className="text-white">
+                                <p data-aos="fade-up" className="text-white">
                                     Upon this declaration, Olori Atuwatse III,
                                     driven by a like passion for the mothers and
                                     children of Iwere Land and the Warri
