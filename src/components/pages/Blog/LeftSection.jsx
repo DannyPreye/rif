@@ -41,10 +41,14 @@ const LeftSection = ({ categories, recentPosts }) => {
                     {recentPosts?.map((post) => (
                         <RecentPost
                             key={post?.id}
-                            image={post?.data.featured_image.url} date={post?.first_publication_date}
+                            image={post?.data.featured_image.url}
+                            date={post?.first_publication_date}
                             title={post?.data?.title}
                             alt={post?.data.featured_image.alt}
-                            link={`/blog/${post?.data?.category?.slug}/${post?.uid}`}
+                            link={
+                                `/blog/${post?.data?.category?.slug}
+                                /${post?.uid}`
+                            }
                         />
                     ))}
                     {/* <div className="blog-recent">

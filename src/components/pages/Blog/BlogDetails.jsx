@@ -15,7 +15,9 @@ const BlogDetails = ({ blog, categories, recentPosts }) => {
 
                     <div class="col-xl-8 col-lg-8">
                         <div class="causes-card">
-                            <div class="causes-image-container cause-details-container">
+                            <div
+                                class="causes-image-container
+                                cause-details-container">
                                 <div
                                     class="causes-image-overlay wow animated"
                                     style={{

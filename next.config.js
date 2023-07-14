@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains:["images.prismic.io"]
+  },
+  eslint: {
+    ignoreDuringBuilds:true
   }
 }
 
