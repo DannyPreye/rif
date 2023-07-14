@@ -49,7 +49,7 @@ export const getStaticProps = async ({ previewData, params }) => {
         },
         page,
     });
-    console.log(blogs);
+
 
     return {
         props: {

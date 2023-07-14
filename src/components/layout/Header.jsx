@@ -92,7 +92,9 @@ const Header = ({ setMenuOpen, isVisible }) => {
                                         <i className="icon-bar"></i>
                                         <i className="icon-bar"></i>
                                     </div>
-                                    <nav className="main-menu navbar-expand-md navbar-light">
+                                    <nav
+                                        className="main-menu
+                                        navbar-expand-md navbar-light">
                                         <div
                                             className=" clearfix show"
                                             id="navbarSupportedContent"

@@ -51,66 +51,11 @@ const LeftSection = ({ categories, recentPosts }) => {
                             }
                         />
                     ))}
-                    {/* <div className="blog-recent">
-                        <div className="blog-recent-image">
-                            <img
-                                src="/assets/images/gallery/bd1.png"
-                                alt="img"
-                            />
-                        </div>
-                        <div className="blog-recent-info">
-                            <a href="blog-grid.html">
-                                Project Concepts or Related Queries
-                            </a>
-                            <p>Apr 17, 2022</p>
-                        </div>
-                    </div>
-                    <div className="blog-recent">
-                        <div className="blog-recent-image">
-                            <img
-                                src="/assets/images/gallery/bd2.png"
-                                alt="img"
-                            />
-                        </div>
-                        <div className="blog-recent-info">
-                            <a href="blog-grid.html">
-                                To Improve Your Express Application
-                            </a>
-                            <p>Apr 17, 2022</p>
-                        </div>
-                    </div>
-                    <div className="blog-recent">
-                        <div className="blog-recent-image">
-                            <img
-                                src="/assets/images/gallery/bd3.png"
-                                alt="img"
-                            />
-                        </div>
-                        <div className="blog-recent-info">
-                            <a href="blog-grid.html">
-                                Ensure that Copies of Documents
-                            </a>
-                            <p>Apr 17, 2022</p>
-                        </div>
-                    </div> */}
+
                 </div>
             </div>
 
-            {/* <div className="causes-details-card">
-                <div className="causes-details-title">
-                    <h3>Popular Tags</h3>
-                </div>
-                <div className="causes-categories">
-                    <div className="blog-tags">
-                        <a href="events-details.html">fundraising</a>
-                        <a href="events.html">charity</a>
-                        <a href="donate.html">donation</a>
-                        <a href="events-details.html">water</a>
-                        <a href="events-carousel.html">kids</a>
-                        <a href="events.html">Education</a>
-                    </div>
-                </div>
-            </div> */}
+
         </div>
     );
 };
@@ -118,13 +63,13 @@ const LeftSection = ({ categories, recentPosts }) => {
 const RecentPost = ({ image, alt, title, date, link }) => {
     return (
         <div className="blog-recent">
-            <div className="blog-recent-image w-[150px] h-[150px] rounded-full
-             overflow-hidden relative block ">
+            <div className=" w-[90px] flex-shrink-0 h-[90px] rounded-full
+             overflow-hidden relative block bg-gray-300 ">
                 <Image fill src={image} alt={alt} />
             </div>
             <div className="blog-recent-info">
                 <Link href={link || "#"}>{title}</Link>
-                <p>{moment(date).format("MM DD, YYYY")}</p>
+                <p>{moment(date).format("MMMM DD, YYYY")}</p>
             </div>
         </div>
     );

@@ -65,7 +65,7 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => (
                     <div className="nav-logo">
                         <a href="index.html">
                             <img
-                                src="assets/images/logo.png"
+                                src="/assets/images/logo.png"
                                 alt="logo"
                                 className="mCS_img_loaded"
                             />
