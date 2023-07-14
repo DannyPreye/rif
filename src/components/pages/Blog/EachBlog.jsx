@@ -11,7 +11,6 @@ const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
                 className="causes-card wow fadeInUp animated"
                 data-wow-delay="600ms"
                 data-wow-duration="1500ms"
-                data-aos-anchor-placement="center-center"
                 style={{
                     visibility: " visible",
                     animationDuration: "1500ms",

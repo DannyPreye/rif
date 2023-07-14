@@ -22,13 +22,14 @@ export const getStaticProps = async ({ previewData }) => {
             direction: "desc",
         },
     });
-    console.log(blogs);
+
 
     return {
         props: {
             blogs: blogs.results,
             totalPages: blogs.total_pages,
         },
+         revalidate:60
     };
 };
 export default index;

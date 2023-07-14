@@ -56,6 +56,7 @@ export const getStaticProps = async ({ previewData, params }) => {
             blogs: blogs.results,
             totalPages: blogs.total_pages,
         },
+         revalidate:60
     };
 };
 export default index;

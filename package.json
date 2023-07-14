@@ -15,8 +15,6 @@
     "@prismicio/react": "^2.7.1",
     "aos": "^2.3.4",
     "autoprefixer": "10.4.14",
-    "eslint": "8.44.0",
-    "eslint-config-next": "13.4.9",
     "lucide-react": "^0.259.0",
     "moment": "^2.29.4",
     "next": "13.4.9",
@@ -28,6 +26,10 @@
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.3",
+    "eslint": "^8.44.0",
+    "eslint-config-next": "^13.4.9",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^3.0.0",
     "slice-machine-ui": "^1.5.0"
   }
 }

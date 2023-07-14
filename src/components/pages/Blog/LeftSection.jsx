@@ -1,9 +1,10 @@
 import moment from "moment";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const LeftSection = ({ categories, recentPosts }) => {
-    console.log(categories);
+    console.log("recent",recentPosts);
     return (
         <div className="col-xl-4 col-lg-4">
             <div className="causes-details-card event-details-card">
@@ -27,42 +28,7 @@ const LeftSection = ({ categories, recentPosts }) => {
                                 </a>
                             </li>
                         ))}
-                        {/* <li>
-                            <a href="events-details.html">
-                                <i className="flaticon-angle-right"></i>
-                                Charity
-                            </a>
-                        </li>
-                        <li>
-                            <a href="blog-grid.html">
-                                <i className="flaticon-angle-right"></i>
-                                Electrical
-                            </a>
-                        </li>
-                        <li>
-                            <a href="blog-grid.html">
-                                <i className="flaticon-angle-right"></i>
-                                Education
-                            </a>
-                        </li>
-                        <li>
-                            <a href="events.html">
-                                <i className="flaticon-angle-right"></i>
-                                Medical
-                            </a>
-                        </li>
-                        <li>
-                            <a href="events-details.html">
-                                <i className="flaticon-angle-right"></i>
-                                Food Donation
-                            </a>
-                        </li>
-                        <li>
-                            <a href="events.html">
-                                <i className="flaticon-angle-right"></i>
-                                Health
-                            </a>
-                        </li> */}
+
                     </ul>
                 </div>
             </div>
@@ -73,7 +39,13 @@ const LeftSection = ({ categories, recentPosts }) => {
                 </div>
                 <div className="causes-categories blog-recent-categories">
                     {recentPosts?.map((post) => (
-                        <RecentPost key={post?.id} />
+                        <RecentPost
+                            key={post?.id}
+                            image={post?.data.featured_image.url} date={post?.first_publication_date}
+                            title={post?.data?.title}
+                            alt={post?.data.featured_image.alt}
+                            link={`/blog/${post?.data?.category?.slug}/${post?.uid}`}
+                        />
                     ))}
                     {/* <div className="blog-recent">
                         <div className="blog-recent-image">
@@ -142,8 +114,9 @@ const LeftSection = ({ categories, recentPosts }) => {
 const RecentPost = ({ image, alt, title, date, link }) => {
     return (
         <div className="blog-recent">
-            <div className="blog-recent-image">
-                <img src={image} alt={alt} />
+            <div className="blog-recent-image w-[150px] h-[150px] rounded-full
+             overflow-hidden relative block ">
+                <Image fill src={image} alt={alt} />
             </div>
             <div className="blog-recent-info">
                 <Link href={link || "#"}>{title}</Link>
