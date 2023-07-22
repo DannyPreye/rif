@@ -118,14 +118,15 @@ const Header = ({ setMenuOpen, isVisible }) => {
                                 </div>
                                 <div className="header__right ">
                                     <div className="header__right__button">
-                                        <div className="header-link-btn hidden lg:block">
-                                            <a
-                                                href="donate.html"
+                                        <div className="header-link-btn
+                                         hidden lg:block">
+                                            <Link
+                                                href="mailto:admin2@atuwateseii.com"
                                                 target="_blank"
                                                 className="btn-1 btn-alt"
                                             >
                                                 Become A Volunteer<span></span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -154,9 +155,7 @@ const StickHeader = () => {
                     </div>
                     <div className="menu-area">
                         <nav className="main-menu clearfix">
-                            {
-                                //--Keep This Empty / Menu will come through Javascript
-                            }
+
 
                             <div
                                 className=" navbar-collapse show clearfix"

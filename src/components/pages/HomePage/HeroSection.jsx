@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const HeroSection = () => {
@@ -11,7 +13,7 @@ const HeroSection = () => {
             >
                 <div className="slide-item">
                     <div className="container">
-                        <div className="row">
+                        <div className="row ">
                             <div data-aos="fade-right" className="col-lg-7">
                                 <div className="banner-slide">
                                     <div className="">
@@ -31,14 +33,14 @@ const HeroSection = () => {
                                                         data-aos-delay="300"
                                                         className="header-link-btn"
                                                     >
-                                                        <a
-                                                            href="blog-details.html"
+                                                        <Link
+                                                            href="/contact-us"
                                                             className="btn-1"
                                                         >
                                                             {" "}
                                                             Contact Us
                                                             <span></span>
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -49,11 +51,19 @@ const HeroSection = () => {
 
                             <div data-aos="fade-left" className="col-lg-5 ">
                                 <div className="banner-right-content ">
-                                    <div className="banner-right-image  p-[8px] border-2 border-dashed border-gray-400 grid place-items-center">
-                                        <img
-                                            src="/assets/images/banner/banner-right-image-03.png"
+                                    <div  className="banner-right-image
+                                     p-[8px] border-2 border-dashed
+                                      border-gray-400
+                                     grid place-items-end">
+                                        <div className=" h-full rounded-t-full
+                                        w-full relative overflow-hidden">
+                                             <Image
+                                               fill
+                                                objectFit="contain"
+                                            src="/assets/iwere-banner-2.jpg"
                                             alt="banner-two-image"
                                         />
+                                       </div>
                                     </div>
                                 </div>
                             </div>

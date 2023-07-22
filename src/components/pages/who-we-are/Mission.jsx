@@ -12,7 +12,8 @@ const Mission = () => {
                             class="about-left-container"
                         >
                             <div
-                                class="about-image-1 relative overflow-hidden wow fadeInUp
+                                class="about-image-1 relative
+                                 overflow-hidden wow fadeInUp
                                 animated "
                                 style={{
                                     visibility: "visible",
@@ -31,9 +32,11 @@ const Mission = () => {
                                 class="about-left-intro paroller"
                                 style={{
                                     transform:
-                                        "translateY(-70px) matrix(1, 0, 0, 1, 0, -11)",
+                                        `translateY(-70px)
+                                         matrix(1, 0, 0, 1, 0, -11)`,
                                     transition:
-                                        "transform 0.6s cubic-bezier(0, 0, 0, 1) 0s",
+                                        `transform 0.6s
+                                        cubic-bezier(0, 0, 0, 1) 0s`,
                                     willChange: "transform",
                                 }}
                             >
@@ -57,18 +60,14 @@ const Mission = () => {
                                 </div>
                                 <p>
                                     To provide physical, mental, and
-                                    entrepreneurial support to indigenes of
-                                    Warri Kingdom, thoroughly equipping them
-                                    with viable means to thrive in society and
-                                    ultimately changing prevailing narratives
-                                    within the region,
+                                    entrepreneurial support to indigenes
+                                    of the Warri Kingdom, thoroughly
+                                    equipping them with viable means
+                                    to thrive in society, and ultimately
+                                    changing prevailing narratives within
+                                    the region.
                                 </p>
-                                {/* <p>
-                                    Thing embarrassing hidden in the middle of
-                                    text. All the Lorem Ipsum generators on the
-                                    Internet tend to repeat predefined chunks as
-                                    necessary for Millions of people
-                                </p> */}
+
                                 <div data-aos="" class="about-bnt-group">
                                     <div class="header-link-btn">
                                         <a

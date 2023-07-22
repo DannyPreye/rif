@@ -4,10 +4,10 @@ import EachBlog from "../Blog/EachBlog";
 const LatestBlog = ({ posts }) => {
     console.log(posts);
     return (
-        <section className="blog">
+        <section className="blog bg-white">
             <div className="blank"></div>
-            <div className="container">
-                <div className="row">
+            <div className="container ">
+                <div className="row items-stretch ">
                     <div className="col-xl-12">
                         <div className="align-title">
                             <h5>Latest Blog</h5>

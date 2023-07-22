@@ -1,4 +1,5 @@
 import { Instagram } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -105,35 +106,36 @@ const Footer = () => {
                                 </div>
                                 <div className="col-lg-3 col-md-6 col-sm-12 footer_column">
                                     <div className="footer_widget links_widget">
-                                        {/* <div className="widget_title">
-                                            <h4>Fundraising</h4>
+                                        <div className="widget_title">
+                                            <h4>Quick Link</h4>
                                         </div>
                                         <div className="widget_content">
                                             <ul className="links_list clearfix">
                                                 <li>
-                                                    <a href="events.html">
-                                                        Education
-                                                    </a>
+                                                    <Link href="/">
+                                                        Home
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="causes.html">
-                                                        Food Donation
-                                                    </a>
+                                                    <Link href="/who-we-are">
+                                                        Who we are
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="team.html">
-                                                        Medical Help
-                                                    </a>
+                                                    <Link href="/contact-us">
+                                                        Contact Us
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href="events-carousel.html">
-                                                        Technology
-                                                    </a>
+                                                    <Link href="/blog">
+                                                        Blog
+                                                    </Link>
                                                 </li>
                                             </ul>
-                                        </div> */}
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div className="col-lg-3 col-md-6 col-sm-12 footer_column">
                                     <div className="footer_widget links_widget">
                                         <div className="widget_title">
@@ -158,15 +160,16 @@ const Footer = () => {
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <div className="header-link-btn footer-donate">
-                                                        <a
-                                                            href="donate.html"
-                                                            target="_blank"
+                                                    <div className="header-link-btn
+                                                     footer-donate">
+                                                        <Link
+                                                            href="mailto:admin2@atuwateseii.com"
+
                                                             className="btn-1 btn-alt"
                                                         >
-                                                            Become A Volunteer{" "}
+                                                            Become A Volunteer
                                                             <span></span>
-                                                        </a>
+                                                        </Link>
                                                     </div>
                                                 </li>
                                             </ul>

@@ -14,7 +14,7 @@ const How_rif = () => {
                     <div class="col-xl-12">
                         <div class="common-title whait-title">
                             <h5>Our Origin</h5>
-                            <h3 data-aos="flip-up">How Did Rif Come To Be</h3>
+                            <h3 data-aos="flip-up">How Did RIF Come To Be</h3>
                             <div className="text-white flex flex-col gap-2">
                                 <p data-aos="fade-up" className="text-white">
                                     <span className="font-bold text-white">
@@ -28,7 +28,8 @@ const How_rif = () => {
                                     data-aos="fade-up"
                                     className="opacity-1 text-white"
                                 >
-                                    “We will look to honour our women; we will
+                                    &quot;We will look to honour our women;
+                                    we will
                                     encourage them, build them up and support
                                     them in realising their inestimable
                                     potential. As we do this, we will also see
@@ -44,7 +45,7 @@ const How_rif = () => {
                                     contribute their substance to the growth and
                                     development of the Itsekiri Nation. So I say
                                     to our women today, you will no longer be
-                                    invisible”
+                                    invisible&quot;
                                 </blockquote>
                                 <p data-aos="fade-up" className="text-white">
                                     Upon this declaration, Olori Atuwatse III,

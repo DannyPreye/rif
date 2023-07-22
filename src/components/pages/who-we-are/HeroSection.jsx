@@ -15,12 +15,17 @@ const HeroSection = () => {
                     <div class="col-xl-6">
                         <div data-aos="fade-right" class="about-left-container">
                             <div
-                                class="home-two-about-image-top left-10 top-20 relative overflow-hidden paroller w-[150px] h-[150px] rounded-full"
+                                class="home-two-about-image-top left-10
+                                top-20 relative overflow-hidden
+                                paroller bg-gray-300
+                                w-[150px] h-[150px] rounded-full"
                                 style={{
                                     transform:
-                                        " translateY(-31px) matrix(1, 0, 0, 1, 0, 11)",
+                                        `  translateY(-31px)
+                                       matrix(1, 0, 0, 1, 0, 11)`,
                                     transition:
-                                        "transform 0.6s cubic-bezier(0, 0, 0, 1) 0s",
+                                        `transform 0.6s
+                                         cubic-bezier(0, 0, 0, 1) 0s`,
                                     willChange: "transform",
                                 }}
                             >
@@ -28,10 +33,13 @@ const HeroSection = () => {
                                     src="/assets/images/who-we-are/iwere_1.jpg"
                                     alt="image"
                                     fill
+                                    className="object-contain"
                                 />
                             </div>
                             <div
-                                class="about-image-1 top-[-20%] h-[630px] w-[550px] wow relative fadeInUp animated rounded-full overflow-hidden"
+                                class="about-image-1 top-[-20%] h-[630px]
+                                w-[550px] wow relative fadeInUp animated
+                                 rounded-full overflow-hidden bg-gray-200"
                                 style={{
                                     visibility: "visible",
                                     animationName: "fadeInUp",
@@ -41,23 +49,32 @@ const HeroSection = () => {
                                     fill
                                     src="/assets/images/who-we-are/iwere_3.JPG"
                                     alt="image"
-                                    // className="object-contain"
+                                    className="object-contain"
                                 />
                             </div>
                             <div
-                                class="home-two-about-image-bottom right-[-50%] top-[50%] overflow-hidden paroller relative h-[150px] w-[150px] rounded-full"
+                                class="home-two-about-image-bottom
+                                right-[-50%] top-[50%] overflow-hidden
+                                 paroller relative h-[150px]
+                                  grid place-items-center
+                                 w-[150px]
+                                  rounded-full bg-gray-200"
                                 style={{
                                     transform:
-                                        " translateY(-31px) matrix(1, 0, 0, 1, 0, 11)",
+                                        ` translateY(-31px)
+                                        matrix(1, 0, 0, 1, 0, 11)`,
                                     transition:
-                                        "transform 0.6s cubic-bezier(0, 0, 0, 1) 0s",
+                                        `transform 0.6s
+                                        cubic-bezier(0, 0, 0, 1) 0s`,
                                     willChange: "transform",
                                 }}
                             >
                                 <Image
-                                    src="/assets/images/who-we-are/iwere_2.jpg"
+                                    src="/assets/iwere-homepage.jpg"
                                     alt="image"
-                                    fill
+                                    width={150}
+                                    height={150}
+                                    className="object-contain"
                                 />
                             </div>
                         </div>
@@ -85,7 +102,7 @@ const HeroSection = () => {
                                     and advancement via education and upskilling
                                     across various demographics.
                                 </p>
-                                <div class="header-link-btn">
+                                {/* <div class="header-link-btn">
                                     <a
                                         href="about-us.html"
                                         target="_blank"
@@ -99,7 +116,7 @@ const HeroSection = () => {
                                             }}
                                         ></span>
                                     </a>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

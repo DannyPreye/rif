@@ -1,3 +1,5 @@
+import { Briefcase } from "lucide";
+
 const EachGoal = ({ serviceNumber, title, content, icon, delay }) => {
     return (
         <div data-aos="fade-up" className="col-xl-4 col-lg-6 col-md-6">
@@ -25,6 +27,7 @@ const EachGoal = ({ serviceNumber, title, content, icon, delay }) => {
                     </div>
                     <div className="service-icon">
                         <span className={`${icon}`}></span>
+
                     </div>
                     <h5>{title}</h5>
                     <p>{content}</p>

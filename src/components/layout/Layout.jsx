@@ -14,7 +14,9 @@ const Layout = ({ children }) => {
         );
     }, []);
     return (
-        <div className={menuOpen ? "mobile-menu-visible" : ""}>
+        <div className={`overflow-x-hidden
+        ${menuOpen ? "mobile-menu-visible" : ""}`}
+        >
             <Header isVisible={isVisible} setMenuOpen={setMenuOpen} />
 
             {children}
@@ -72,7 +74,7 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => (
                         </a>
                     </div>
                     <div className="menu-outer">
-                        {/* {                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->} */}
+
                         <div className=" " id="navbarSupportedContent">
                             <ul className="navigation clearfix">
                                 {menus.map((menu) => (
@@ -110,7 +112,9 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => (
                                 </Link>
                             </li>
                             <li>
-                                <Link href="https://www.instagram.com/royaliwerefoundation/">
+                                <Link
+                                    href="https://www.instagram.com/royaliwerefoundation/"
+                                >
                                     <span className="fab fa-linkedin"></span>
                                 </Link>
                             </li>
@@ -119,13 +123,13 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => (
                 </div>
                 <div
                     id="mCSB_1_scrollbar_vertical"
-                    className="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical"
+                    className="mCSB_scrollTools mCSB_1_scrollbar
+                     mCS-light mCSB_scrollTools_vertical"
                     style={{ display: "none" }}
                 >
                     <div className="mCSB_draggerContainer">
                         <div
-                            id="mCSB_1_dragg
-er_vertical"
+                            id="mCSB_1_dragger_vertical"
                             className="mCSB_dragger"
                             style={{
                                 position: "absolute",

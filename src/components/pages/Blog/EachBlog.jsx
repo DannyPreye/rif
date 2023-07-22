@@ -1,4 +1,5 @@
 import moment from "moment";
+import Image from "next/image";
 import { RichText } from "prismic-dom";
 
 const { default: Link } = require("next/link");
@@ -6,9 +7,9 @@ const { default: Link } = require("next/link");
 const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
     const convertRichTextToPlain = RichText?.asText(content);
     return (
-        <div className="col-xl-4 col-lg-4">
+        <div className="col-xl-4 col-lg-4 min-h-full mt-4">
             <div
-                className="causes-card wow fadeInUp animated"
+                className="causes-card wow fadeInUp animated h-full w-full"
                 data-wow-delay="600ms"
                 data-wow-duration="1500ms"
                 style={{
@@ -18,8 +19,11 @@ const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
                     animationName: "fadeInUp",
                 }}
             >
-                <Link href={link || "#"} className="causes-image blog-image">
-                    <img src={img} alt={alt} />
+                <Link style={{
+                    height:"316px"
+                }} href={link || "#"} className="causes-image
+                 relative   h-[316px] block blog-image bg-gray-200">
+                    <Image fill src={img} alt={alt} className="object-contain"/>
                 </Link>
                 <div className="blog-contant">
                     <div className="header-link-btn">
@@ -29,16 +33,7 @@ const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
                         </Link>
                     </div>
                     <div className="comments">
-                        <ul>
-                            {/* <li>
-                                <i className="flaticon-user"></i>{" "}
-                                <span> {writer}</span>
-                            </li> */}
-                            {/* <li>
-                                <i className="flaticon-bubble-chat"></i>{" "}
-                                <span> Comment</span>
-                            </li> */}
-                        </ul>
+
                     </div>
                     <Link href={link || "#"} className="hover-content">
                         {title}

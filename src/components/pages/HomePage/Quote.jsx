@@ -14,11 +14,13 @@ const Quote = () => {
                     <div className="col-xl-12">
                         <div className="call-title ">
                             <p data-aos="fade-up-right">
-                                RIF is a restorative mission to re-engineer the
-                                mindsets of indigenes of Warri Kingdom to propel
+                                &quot;RIF is a restorative mission
+                                to re-engineer the
+                                mindsets of indigenes of
+                                Warri Kingdom to propel
                                 them for a more productive and fulfilling life,
                                 and in turn, be worthy examples for the next
-                                generation.
+                                generation.&quot;
                             </p>
                             <p className="mt-8 font-bold text-[1.2rem]">
                                 Olori Atuwatse III

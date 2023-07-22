@@ -12,7 +12,9 @@ const Vision = () => {
                             class="about-left-container"
                         >
                             <div
-                                class="about-image-1 relative overflow-hidden wow fadeInUp animated bg-red-500"
+                                class="about-image-1 relative
+                                 overflow-hidden wow fadeInUp
+                                  animated bg-red-500"
                                 style={{
                                     visibility: "visible",
                                     animationName: "fadeInUp",
@@ -24,24 +26,7 @@ const Vision = () => {
                                     fill
                                 />
                             </div>
-                            {/* <div
-                                class="about-left-intro paroller"
-                                style={{
-                                    transform:
-                                        "translateY(-70px) matrix(1, 0, 0, 1, 0, -11)",
-                                    transition:
-                                        "transform 0.6s cubic-bezier(0, 0, 0, 1) 0s",
-                                    willChange: "transform",
-                                }}
-                            >
-                                <div class="about-left-intro-inner">
-                                    <h5>RIF</h5>
-                                    <p className="leading-[18px]">
-                                        RIF is positioned to deliver obvious
-                                        change in today&apos;s society
-                                    </p>
-                                </div>
-                            </div> */}
+
                         </div>
                     </div>
 
@@ -50,21 +35,17 @@ const Vision = () => {
                             <div class="about-right-container-inner">
                                 <div class="common-title">
                                     <h5>Vision</h5>
-                                    <h3>Vision Statement</h3>
+
                                 </div>
                                 <p>
-                                    To become West Africa’s model Foundation for
-                                    indigenous mindset re-engineering, education
-                                    and skilling via deliberate collaborative
-                                    investment in human capacity/resource
-                                    development.
+                                    To become West Africa&apos;s model
+                                    foundation for indigenous mindset
+                                    re-engineering, education, and skilling
+                                    via deliberate collaborative
+                                    investment in human
+                                    capacity/resource development.
                                 </p>
-                                {/* <p>
-                                    Thing embarrassing hidden in the middle of
-                                    text. All the Lorem Ipsum generators on the
-                                    Internet tend to repeat predefined chunks as
-                                    necessary for Millions of people
-                                </p> */}
+
                                 <div class="about-bnt-group">
                                     <div class="header-link-btn">
                                         <a

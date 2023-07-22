@@ -15,7 +15,7 @@ const ContactForm = () => {
                         <div className="align-title">
                             <h5>Contact with us</h5>
                             <h3>
-                                Send Us A Message For <br /> Next Project
+                                Send Us A Message For Our <br /> Next Project
                             </h3>
                         </div>
                     </div>
