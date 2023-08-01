@@ -18,11 +18,11 @@ const Main = ({ projects, totalPages }) => {
   return (
     <div class='blog events event-page'>
       <div class='container'>
-        <div class='row items-stretch justify-center gap-3'>
+        <div class='row items-stretch justify-start gap-3'>
           {projects.map((project) => (
             <EachProject
               link={`/past-project/${project.uid}`}
-              location={'Warri'}
+              location={project?.data?.location}
               img={project?.data?.featured_image?.url}
               date={project?.data?.project_date}
               title={project?.data?.title}
