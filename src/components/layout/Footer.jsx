@@ -40,17 +40,7 @@ const Footer = () => {
                                         </div>
                                         <div className="widget_media">
                                             <ul>
-                                                {/* <li>
-                                                    <a href="#0">
-                                                        {" "}
-                                                        <i className="flaticon-facebook-app-symbol"></i>
-                                                    </a>
-                                                </li> */}
-                                                {/* <li>
-                                                    <a href="#0">
-                                                        <i className="flaticon-twitter"></i>
-                                                    </a>
-                                                </li> */}
+
                                                 <li>
                                                     <a href="https://www.linkedin.com/company/royal-iwere-foundation">
                                                         <i className="flaticon-linkedin"></i>
@@ -64,45 +54,13 @@ const Footer = () => {
                                                         />
                                                     </a>
                                                 </li>
-                                                {/* <li>
-                                                    <a href="#0">
-                                                        <i className="flaticon-pinterest"></i>
-                                                    </a>
-                                                </li> */}
+
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-lg-2 col-md-6 col-sm-12 footer_column">
-                                    {/* <div className="footer_widget links_widget ml_100">
-                                        <div className="widget_title">
-                                            <h4>Services</h4>
-                                        </div>
-                                        <div className="widget_content">
-                                            <ul className="links_list clearfix">
-                                                <li>
-                                                    <a href="about-us.html">
-                                                        About Us
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="causes.html">
-                                                        Causes
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="team.html">
-                                                        Our Team
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="events-details.html">
-                                                        Latest News
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div> */}
+
                                 </div>
                                 <div className="col-lg-3 col-md-6 col-sm-12 footer_column">
                                     <div className="footer_widget links_widget">
@@ -143,10 +101,7 @@ const Footer = () => {
                                         </div>
                                         <div className="widget_content">
                                             <ul className="links_list right">
-                                                {/* <li>
-                                                    4140 Parker Rd. Allentown,
-                                                    New Mexico
-                                                </li> */}
+
                                                 <li>
                                                     <a href="mailto:admin2@atuwateseii.com">
                                                         <i className="flaticon-email"></i>{" "}
@@ -154,9 +109,10 @@ const Footer = () => {
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="tel:+2348173265698">
+                                                    <a href="tel:+2348154105285">
                                                         <i className="flaticon-phone-call"></i>
-                                                        (+234)817 3265 698
+                                                        (+234)815 4105 285
+
                                                     </a>
                                                 </li>
                                                 <li>

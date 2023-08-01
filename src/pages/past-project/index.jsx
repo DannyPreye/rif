@@ -1,14 +1,13 @@
-// import Layout from "@/components/layout/Layout";
-import Blog from '../../components/pages/Blog';
+// import Layout from '@/components/layout/Layout';
+import Main from '../../components/pages/PastProjects/Main';
 import { createClient } from '../../prismicio';
-// import BlogPage from "@/components/pages/Blog";
 import React from 'react';
 import Layout from '../../components/layout/Layout';
 
-const index = ({ blogs, totalPages }) => {
+const index = ({ projects, totalPages }) => {
   return (
     <Layout>
-      <Blog posts={blogs} totalPages={totalPages} />
+      <Main projects={projects} totalPages={totalPages} />
     </Layout>
   );
 };
@@ -16,7 +15,7 @@ const index = ({ blogs, totalPages }) => {
 export const getStaticProps = async ({ previewData }) => {
   const client = createClient({ previewData });
 
-  const blogs = await client.getByType('blog', {
+  const projects = await client.getByType('past_project', {
     pageSize: 9,
     orderings: {
       field: 'document.first_publication_date',
@@ -26,8 +25,8 @@ export const getStaticProps = async ({ previewData }) => {
 
   return {
     props: {
-      blogs: blogs.results,
-      totalPages: blogs.total_pages,
+      projects: projects.results,
+      totalPages: projects.total_pages,
     },
     revalidate: 60,
   };

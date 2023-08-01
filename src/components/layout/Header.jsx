@@ -18,12 +18,13 @@ const Header = ({ setMenuOpen, isVisible }) => {
                             <div className="header_top_left">
                                 <ul className="top_left">
                                     <li>
-                                        <a href="tel:+2348173265698">
+                                        <a href="tel:+2348154105285">
                                             <i
                                                 className="flaticon-phone-call
                                     "
                                             ></i>
-                                            (+234)817 3265 698
+                                            (+234)815 4105 285
+
                                         </a>
                                     </li>
                                     <li>
@@ -37,17 +38,7 @@ const Header = ({ setMenuOpen, isVisible }) => {
                             <div className="header_top_right">
                                 <div className="header_right_info">
                                     <ul className="top_right items-center">
-                                        {/* <li>
-                                            <Link href="">
-                                                {" "}
-                                                <i className="flaticon-facebook-app-symbol"></i>
-                                            </Link>
-                                        </li> */}
-                                        {/* <li>
-                                            <a href="#">
-                                                <i className="flaticon-twitter"></i>
-                                            </a>
-                                        </li> */}
+
                                         <li>
                                             <a href="https://www.linkedin.com/company/royal-iwere-foundation">
                                                 <i className="flaticon-linkedin"></i>

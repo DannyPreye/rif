@@ -22,7 +22,7 @@ const LeftSection = ({ categories, recentPosts }) => {
                     <ul>
                         {categories?.map((category) => (
                             <li key={category.id}>
-                                <a href="events-details.html">
+                                <a href={`/blog/${category?.uid}`}>
                                     <i className="flaticon-angle-right"></i>
                                     {category.data.category_title}
                                 </a>
