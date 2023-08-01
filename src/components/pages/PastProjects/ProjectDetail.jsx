@@ -11,7 +11,7 @@ const ProjectDetail = ({ details }) => {
 
   console.log(details);
   return (
-    <div class='mt-12'>
+    <div class='my-12'>
       <div class='event-card'>
         <div class=' causes-image-container cause-details-container event-details-container rounded-lg bg-gradient-to-t from-black to-transparent'>
           <div

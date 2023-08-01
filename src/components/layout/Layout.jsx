@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
 
       {children}
 
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
       <MobileMenu setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
 
