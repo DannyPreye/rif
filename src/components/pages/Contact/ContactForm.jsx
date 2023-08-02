@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 // import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -22,9 +23,12 @@ const ContactForm = () => {
 
     try {
       const res = await toast.promise(
-        fetch('/api/contactMail', {
-          method: 'POST',
-          body: JSON.stringify(data),
+        axios.post('/api/contact', {
+          email,
+          name,
+          phoneNumber,
+          subject,
+          message,
         }),
         {
           pending: ` We are processing your request.`,

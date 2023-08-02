@@ -18,7 +18,7 @@ const Main = ({ projects, totalPages }) => {
   return (
     <div class='blog events event-page'>
       <div class='container'>
-        <div class='row items-stretch justify-start gap-3'>
+        <div class='row items-stretch justify-start  '>
           {projects.map((project) => (
             <EachProject
               link={`/past-project/${project.uid}`}

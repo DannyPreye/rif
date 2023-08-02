@@ -9,7 +9,9 @@ const ProjectDetail = ({ details }) => {
   const [currentIMage, setCurrentImage] = useState('');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  console.log(details);
+  const [startIndex, setStartIndex] = useState(0);
+  const [endIndex, setEndIndex] = useState(9);
+
   return (
     <div class='my-12'>
       <div class='event-card'>
