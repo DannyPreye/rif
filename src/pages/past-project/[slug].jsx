@@ -12,38 +12,39 @@ import { NextSeo } from 'next-seo';
 
 const ProjectDetails = ({ details }) => {
   const router = useRouter();
-  const plainText = RichText?.asText(details?.data.description);
+  // const plainText = RichText?.asText(details?.data.description);
 
   return (
     <Layout>
-      <NextSeo
-        title={`${details?.data?.title} | Royal Iwere Foundation`}
-        description={details?.data?.description || plainText.slice(0, 160)}
-        twitter={{
-          cardType: 'summary_large_image',
-        }}
-        openGraph={{
-          type: 'website',
-          locale: 'en_IE',
-          description: details?.data?.description || plainText.slice(0, 160),
-          url: `https://rif.ng/past-project/${details?.uid}`,
-          siteName: 'RIF',
-          images: [
-            {
-              url: details.data?.featured_image?.url,
-            },
-          ],
-          title: `${details?.data?.title} | Royal Iwere Foundation`,
-        }}
-        canonical={`https://rif.ng/past-project/${details?.uid}`}
-      />
-
       {router.isFallback ? (
         <></>
       ) : (
-        <div className='container'>
-          <ProjectDetail details={details} />
-        </div>
+        <>
+          <NextSeo
+            title={`${details?.data?.title} | Royal Iwere Foundation`}
+            // description={details?.data?.description || plainText.slice(0, 160)}
+            twitter={{
+              cardType: 'summary_large_image',
+            }}
+            openGraph={{
+              type: 'website',
+              locale: 'en_IE',
+
+              url: `https://rif.ng/past-project/${details?.uid}`,
+              siteName: 'RIF',
+              images: [
+                {
+                  url: details.data?.featured_image?.url,
+                },
+              ],
+              title: `${details?.data?.title} | Royal Iwere Foundation`,
+            }}
+            canonical={`https://rif.ng/past-project/${details?.uid}`}
+          />
+          <div className='container'>
+            <ProjectDetail details={details} />
+          </div>
+        </>
       )}
     </Layout>
   );

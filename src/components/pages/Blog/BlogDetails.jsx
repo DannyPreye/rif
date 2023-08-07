@@ -31,9 +31,10 @@ const BlogDetails = ({ blog, categories, recentPosts }) => {
                   />
                   <div className='header-link-btn'>
                     <a href='events.html' className='btn-1'>
-                      {moment(blog?.first_publication_date).format(
-                        'DD MMM YYYY'
-                      )}
+                      {blog?.first_publication_date &&
+                        moment(blog?.first_publication_date).format(
+                          'DD MMM YYYY'
+                        )}
                       <span></span>
                     </a>
                   </div>

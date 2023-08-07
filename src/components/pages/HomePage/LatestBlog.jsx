@@ -21,16 +21,16 @@ const LatestBlog = ({ posts }) => {
               </h3>
             </div>
           </div>
-          {posts.map((post) => (
+          {posts?.map((post) => (
             <EachBlog
-              key={post.id}
+              key={post?.id}
               img={post?.data?.featured_image?.url}
               alt={post?.data?.featured_image?.alt}
               writer={'Admin'}
               title={post?.data?.title}
-              content={post.data.content}
+              content={post?.data.content}
               createdDate={'20 Feb 2022'}
-              link={`/blog/${post.data.category.slug}/${post.uid}`}
+              link={`/blog/${post?.data?.category?.slug}/${post.uid}`}
             />
           ))}
         </div>

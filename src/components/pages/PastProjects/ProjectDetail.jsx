@@ -29,7 +29,10 @@ const ProjectDetail = ({ details }) => {
             />
             <div className='day-7'>
               <h3>{new Date(details?.data?.project_date).getDate()}</h3>
-              <h6>{moment(details?.data?.project_date).format('MMMM YYYY')}</h6>
+              <h6>
+                {details?.data?.project_date &&
+                  moment(details?.data?.project_date).format('MMMM YYYY')}
+              </h6>
             </div>
           </div>
         </div>

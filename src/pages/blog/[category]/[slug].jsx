@@ -7,31 +7,32 @@ import Layout from '../../../components/layout/Layout';
 import defaultMetadata from '@/METADATA';
 import Head from 'next/head';
 import { RichText } from 'prismic-dom';
+import { NextSeo } from 'next-seo';
 
 const Details = ({ blog, categories, relatedPosts }) => {
-  const plainText = RichText?.asText(blog?.data.content);
+  // const plainText = blog?.data.content && RichText?.asText(blog?.data.content);
   return (
     <Layout>
       <NextSeo
         title={`${blog?.data?.title} | Royal Iwere Foundation`}
-        description={blog?.data?.description || plainText.slice(0, 160)}
+        // description={blog?.data?.description || plainText.slice(0, 160)}
         twitter={{
           cardType: 'summary_large_image',
         }}
         openGraph={{
           type: 'website',
           locale: 'en_IE',
-          description: blog?.data?.description || plainText.slice(0, 160),
+          // description: blog?.data?.description || plainText.slice(0, 160),
           url: `https://rif.ng/past-project/${blog?.uid}`,
           siteName: 'RIF',
           images: [
             {
-              url: blog.data?.featured_image?.url,
+              url: blog?.data?.featured_image?.url,
             },
           ],
-          title: `${details?.data?.title} | Royal Iwere Foundation`,
+          title: `${blog?.data?.title} | Royal Iwere Foundation`,
         }}
-        canonical={`https://rif.ng/past-project/${details?.uid}`}
+        canonical={`https://rif.ng/past-project/${blog?.uid}`}
       />
       <BlogDetails
         blog={blog}
