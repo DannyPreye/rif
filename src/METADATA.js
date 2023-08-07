@@ -1,7 +1,23 @@
-module.exports = {
-    title: "Royal Iwere Foundation",
-    description:
-        "RIF, an African non profit organisation founded in 2023, aims to assist the Warri Kingdom by effectively tackling obstacles and vulnerabilities that could hinder the state's continuous development and its capacity to compete internationally.",
-    base_url: process.env.BASE_URL,
-    og_image: "/assets/images/logo.png",
+const defaultMetadata = {
+  title: 'Royal Iwere Foundation',
+  description: "An Iwere Nation's Human Capital Development Programme",
+  keywords: 'RIF, foundation, iwere foundation',
+  images: [
+    {
+      type: 'image/png',
+      url: '/assets/images/logo.png',
+    },
+  ],
+  logo: '/assets/images/logo.png',
+  website: 'https://rif.ng/',
+  summary: '',
+  canonical: 'https://rif.ng',
+  openGraph: {
+    type: 'website',
+    locale: 'en_IE',
+    url: 'https://rif.ng',
+    site_name: 'RIF',
+  },
 };
+
+export default defaultMetadata;

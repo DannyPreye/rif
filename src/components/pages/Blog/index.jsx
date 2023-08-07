@@ -8,16 +8,14 @@ const Blog = ({ posts, totalPages }) => {
   const currentPage = Number(router.query.page) || 1;
   const pathname = router.asPath.split('/page')[0];
 
-  console.log('shjsghg', pathname);
-
   const pageNumbers = Array.from(
     { length: totalPages },
     (_, index) => index + 1
   );
   return (
-    <div class='blog home-three-blog main-blog'>
-      <div class='container'>
-        <div class='row gap-y-5'>
+    <div className='blog home-three-blog main-blog'>
+      <div className='container'>
+        <div className='row gap-y-5'>
           {posts.map((post) => (
             <EachBlog
               key={post.id}
@@ -30,8 +28,8 @@ const Blog = ({ posts, totalPages }) => {
               link={`/blog/${post.data.category.slug}/${post.uid}`}
             />
           ))}
-          <div class='col-xl-12'>
-            <div class='paigenition'>
+          <div className='col-xl-12'>
+            <div className='paigenition'>
               <ul>
                 {pageNumbers.map((page) => (
                   <li key={`page_${page}`}>
@@ -41,7 +39,7 @@ const Blog = ({ posts, totalPages }) => {
                 {currentPage < totalPages && (
                   <li>
                     <Link href={`/blog/page/${currentPage + 1}`}>
-                      <i class='flaticon-right-arrow-1'></i>
+                      <i className='flaticon-right-arrow-1'></i>
                     </Link>
                   </li>
                 )}

@@ -13,21 +13,21 @@ const ProjectDetail = ({ details }) => {
   const [endIndex, setEndIndex] = useState(9);
 
   return (
-    <div class='my-12'>
-      <div class='event-card'>
-        <div class=' causes-image-container cause-details-container event-details-container rounded-lg bg-gradient-to-t from-black to-transparent'>
+    <div className='my-12'>
+      <div className='event-card'>
+        <div className=' causes-image-container cause-details-container event-details-container rounded-lg bg-gradient-to-t from-black to-transparent'>
           <div
-            class='causes-image-overlay wow animated relative'
+            className='causes-image-overlay wow animated relative'
             style={{ visibility: 'visible', animationName: ' panel' }}
           ></div>
-          <div class='causes-image cause-details-image '>
+          <div className='causes-image cause-details-image '>
             <Image
               className='object-contain'
               fill
               src={details.data?.featured_image?.url}
               alt='img'
             />
-            <div class='day-7'>
+            <div className='day-7'>
               <h3>{new Date(details?.data?.project_date).getDate()}</h3>
               <h6>{moment(details?.data?.project_date).format('MMMM YYYY')}</h6>
             </div>
@@ -35,33 +35,33 @@ const ProjectDetail = ({ details }) => {
         </div>
       </div>
 
-      <div class='event-card'>
-        <div class='causes-bar-details'>
-          <div class='causes-bar-info event-details-bar-info'>
+      <div className='event-card'>
+        <div className='causes-bar-details'>
+          <div className='causes-bar-info event-details-bar-info'>
             <p>
-              <i class='flaticon-pin'></i>
+              <i className='flaticon-pin'></i>
               {details?.data?.location}
             </p>
           </div>
         </div>
       </div>
 
-      <div class='main-causes-content'>
-        <div class='causes-details-title'>
+      <div className='main-causes-content'>
+        <div className='causes-details-title'>
           <h3>{details?.data?.title}</h3>
         </div>
 
         <RichText field={details?.data?.description} />
       </div>
-      <div class='main-causes-content'>
-        <div class='causes-details-title event-details-title-1 ml-3'>
+      <div className='main-causes-content'>
+        <div className='causes-details-title event-details-title-1 ml-3'>
           <h3>Images from the event </h3>
         </div>
-        <div class='row  '>
+        <div className='row  '>
           {details?.data?.images?.map((item, index) => (
-            <div class='col-xl-4 col-md-6 relative mt-2  '>
+            <div className='col-xl-4 col-md-6 relative mt-2  '>
               <div
-                class='gallery-content wow fadeInUp animated
+                className='gallery-content wow fadeInUp animated
                 relative h-[350px]   overflow-hidden rounded-[12px] bg-gradient-to-t from-black to-transparent'
                 data-wow-delay='600ms'
                 data-wow-duration='1500ms'
@@ -72,7 +72,7 @@ const ProjectDetail = ({ details }) => {
                   animationName: 'fadeInUp',
                 }}
               >
-                <div class='team-content-wrapper  '>
+                <div className='team-content-wrapper  '>
                   <Image
                     width={item?.image?.dimensions?.width}
                     height={item?.image?.dimensions?.height}
@@ -80,7 +80,7 @@ const ProjectDetail = ({ details }) => {
                     className='h-[100%] object-contain'
                     alt='image'
                   />
-                  <div class='team-icon team3-icon'>
+                  <div className='team-icon team3-icon'>
                     <ul>
                       <li>
                         <a
@@ -89,10 +89,10 @@ const ProjectDetail = ({ details }) => {
                             setCurrentImage(item?.image.url);
                             setCurrentImageIndex(index);
                           }}
-                          class='team-icon-plus lightbox-image cursor-pointer'
+                          className='team-icon-plus lightbox-image cursor-pointer'
                           data-fancybox='gallery'
                         >
-                          <i class='flaticon-plus'></i>
+                          <i className='flaticon-plus'></i>
                         </a>
                       </li>
                     </ul>
@@ -141,10 +141,10 @@ const Modal = ({ open, setOpen, currentImageIndex, images, currentIMage }) => {
   return (
     <div
       onClick={() => setOpen(false)}
-      className={`fixed left-0 top-0 z-[999] flex h-screen w-full flex-col items-center justify-center
+      className={`fixed left-0 top-0 z-[1999] flex h-screen w-full flex-col items-center justify-center
        bg-[#706f6f59] backdrop-blur-md ${open ? 'block' : 'hidden'}`}
     >
-      <div className='relative z-10 h-[450px] w-[80%] max-w-[450px] overflow-hidden rounded-md'>
+      <div className='relative z-10 h-[450px] w-[70%] max-w-[450px] overflow-hidden rounded-md'>
         <Image
           fill
           src={images[index]?.image.url}
@@ -157,11 +157,11 @@ const Modal = ({ open, setOpen, currentImageIndex, images, currentIMage }) => {
         onClick={(e) => e.stopPropagation()}
         className='container absolute
        bottom-0 top-0 m-auto flex h-fit
-        items-center justify-between px-3'
+        items-center justify-between px-[3px] sm:px-3'
       >
         <button
           data-fancybox-prev=''
-          class='fancybox-button fancybox-button--arrow_left'
+          className='fancybox-button fancybox-button--arrow_left'
           title='Previous'
           onClick={handlePrevious}
         >
@@ -171,7 +171,7 @@ const Modal = ({ open, setOpen, currentImageIndex, images, currentIMage }) => {
         </button>
         <button
           data-fancybox-next=''
-          class='fancybox-button fancybox-button--arrow_right'
+          className='fancybox-button fancybox-button--arrow_right'
           title='Next'
           onClick={handleNextIMage}
         >

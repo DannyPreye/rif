@@ -4,12 +4,11 @@
  * @param {BlogQuoteProps}
  */
 const BlogQuote = ({ slice }) => {
-    console.log(slice);
-    return (
-        <blockquote>
-            “{slice.primary.content}”<span>{slice.primary.author}</span>
-        </blockquote>
-    );
+  return (
+    <blockquote>
+      “{slice.primary.content}”<span>{slice.primary.author}</span>
+    </blockquote>
+  );
 };
 
 export default BlogQuote;

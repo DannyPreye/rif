@@ -3,10 +3,15 @@ import Main from '../../components/pages/PastProjects/Main';
 import { createClient } from '../../prismicio';
 import React from 'react';
 import Layout from '../../components/layout/Layout';
+import Head from 'next/head';
+import defaultMetadata from '@/METADATA';
 
 const index = ({ projects, totalPages }) => {
   return (
     <Layout>
+      <Head>
+        <title>{defaultMetadata.title} | Past Projects</title>
+      </Head>
       <Main projects={projects} totalPages={totalPages} />
     </Layout>
   );

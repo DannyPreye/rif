@@ -120,7 +120,7 @@ const Footer = () => {
             <div className='copyright'>
               <p>
                 {' '}
-                Royal Iwere Foundation © {new Date().getFullYear}. All Rights
+                Royal Iwere Foundation © {new Date().getFullYear()}. All Rights
                 Reserved.
               </p>
             </div>

@@ -1,4 +1,4 @@
-import { PrismicRichText } from "@prismicio/react";
+import { PrismicRichText } from '@prismicio/react';
 
 /**
  * @typedef {import("@prismicio/client").Content.BlogContentSlice} BlogContentSlice
@@ -6,8 +6,7 @@ import { PrismicRichText } from "@prismicio/react";
  * @param {BlogContentProps}
  */
 const BlogContent = ({ slice }) => {
-    console.log(slice);
-    return <PrismicRichText field={slice.primary.content} />;
+  return <PrismicRichText field={slice.primary.content} />;
 };
 
 export default BlogContent;

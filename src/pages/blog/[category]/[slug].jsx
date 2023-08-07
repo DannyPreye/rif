@@ -4,10 +4,35 @@ import { createClient } from '../../../prismicio';
 import React from 'react';
 import * as prismic from '@prismicio/client';
 import Layout from '../../../components/layout/Layout';
+import defaultMetadata from '@/METADATA';
+import Head from 'next/head';
+import { RichText } from 'prismic-dom';
 
 const Details = ({ blog, categories, relatedPosts }) => {
+  const plainText = RichText?.asText(blog?.data.content);
   return (
     <Layout>
+      <NextSeo
+        title={`${blog?.data?.title} | Royal Iwere Foundation`}
+        description={blog?.data?.description || plainText.slice(0, 160)}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+        openGraph={{
+          type: 'website',
+          locale: 'en_IE',
+          description: blog?.data?.description || plainText.slice(0, 160),
+          url: `https://rif.ng/past-project/${blog?.uid}`,
+          siteName: 'RIF',
+          images: [
+            {
+              url: blog.data?.featured_image?.url,
+            },
+          ],
+          title: `${details?.data?.title} | Royal Iwere Foundation`,
+        }}
+        canonical={`https://rif.ng/past-project/${details?.uid}`}
+      />
       <BlogDetails
         blog={blog}
         categories={categories}
@@ -59,6 +84,7 @@ export const getStaticProps = async ({ previewData, params }) => {
       direction: 'desc',
     },
   });
+
   return {
     props: {
       blog: publication,

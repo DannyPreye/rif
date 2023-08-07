@@ -25,7 +25,6 @@ export const getStaticProps = async ({ previewData }) => {
       direction: 'desc',
     },
   });
-  console.log(blogs);
 
   return {
     props: {

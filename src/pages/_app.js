@@ -15,13 +15,14 @@ import '../../public/assets/css/swiper.min.css';
 import '../../public/assets/css/responsive.css';
 import '@/styles/globals.css';
 import Head from 'next/head';
-import METADATA from '@/METADATA';
+import SEO from '@/METADATA';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Aos from 'aos';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { DefaultSeo } from 'next-seo';
 export default function App({ Component, pageProps }) {
   useEffect(() => {
     AOS.init({ once: true, duration: 1500 });
@@ -30,9 +31,9 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>{METADATA.title}</title>
-        <link rel='icon' href='/assets/images/logo.png' />
+        <link rel='icon' type={'image/png'} href={SEO.logo} />
       </Head>
+      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
       <ToastContainer />
     </>

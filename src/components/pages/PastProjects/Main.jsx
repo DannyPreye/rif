@@ -9,16 +9,14 @@ const Main = ({ projects, totalPages }) => {
   const currentPage = Number(router.query.page) || 1;
   const pathname = router.asPath.split('/page')[0];
 
-  console.log('shjsghg', pathname);
-
   const pageNumbers = Array.from(
     { length: totalPages },
     (_, index) => index + 1
   );
   return (
-    <div class='blog events event-page'>
-      <div class='container'>
-        <div class='row items-stretch justify-start  '>
+    <div className='blog events event-page'>
+      <div className='container'>
+        <div className='row items-stretch justify-start  '>
           {projects.map((project) => (
             <EachProject
               link={`/past-project/${project.uid}`}
@@ -29,8 +27,8 @@ const Main = ({ projects, totalPages }) => {
             />
           ))}
 
-          <div class='col-xl-12'>
-            <div class='paigenition'>
+          <div className='col-xl-12'>
+            <div className='paigenition'>
               <ul>
                 {pageNumbers.map((page) => (
                   <li key={`page_${page}`}>
@@ -40,7 +38,7 @@ const Main = ({ projects, totalPages }) => {
                 {currentPage < totalPages && (
                   <li>
                     <Link href={`${pathname}/page/${currentPage + 1}`}>
-                      <i class='flaticon-right-arrow-1'></i>
+                      <i className='flaticon-right-arrow-1'></i>
                     </Link>
                   </li>
                 )}

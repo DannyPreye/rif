@@ -5,12 +5,16 @@ import { createClient } from '../../prismicio';
 import * as prismic from '@prismicio/client';
 import Blog from '../../components/pages/Blog';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
+import defaultMetadata from '@/METADATA';
 
 const CategoryPage = ({ blogPosts, totalPages }) => {
-
-  const router = useRouter()
+  const router = useRouter();
   return (
     <Layout>
+      <Head>
+        <title>{defaultMetadata.title} | Blog</title>
+      </Head>
       {router.isFallback ? (
         <></>
       ) : (

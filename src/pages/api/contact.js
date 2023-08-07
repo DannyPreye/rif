@@ -10,7 +10,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 export default async function handler(req, res) {
-  console.log(`${process.env.EMAIL}`, process.env.PASSWORD);
   if (req.method == 'POST') {
     const { email, name, phoneNumber, subject, message } = req.body;
 
@@ -21,7 +20,7 @@ export default async function handler(req, res) {
         subject: subject,
         html: `<div>
         <p><b>Sender Name:</b> ${name} </p>
-        <p><b>Sender Phone Number:</b> ${phoneNumber} </p>
+        ${phoneNumber && `<p><b>Sender Phone Number:</b> ${phoneNumber} </p>`}
         <p><b>Sender Email:</b> ${email} </p>
         <h4 style="text-align:center; margin-top: 1rem">Message</h4>
         <p>${message} </p>

@@ -8,6 +8,9 @@ import Layout from '../../../components/layout/Layout';
 const index = ({ blogs, totalPages }) => {
   return (
     <Layout>
+      <Head>
+        <title>{defaultMetadata.title} | Blog</title>
+      </Head>
       <Blog posts={blogs} totalPages={totalPages} />
     </Layout>
   );
@@ -41,7 +44,6 @@ export const getStaticProps = async ({ previewData, params }) => {
   const page = params.page;
   const client = createClient({ previewData });
 
-  console.log('page', page);
   const blogs = await client.getByType('blog', {
     pageSize: 9,
     orderings: {

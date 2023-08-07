@@ -22,7 +22,6 @@ const Layout = ({ children }) => {
 
       {children}
 
-      {/* <Newsletter /> */}
       <Footer />
       <MobileMenu setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
 
@@ -34,7 +33,6 @@ const Layout = ({ children }) => {
           });
         }}
         className={`scroll-top scroll-to-target ${isVisible && 'open'}`}
-        dataTarget='html'
       >
         <span className='icon-42'>
           <i className='fa fa-angle-double-right'></i>
@@ -57,7 +55,7 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => (
         id='mCSB_1'
         className='mCustomScrollBox mCS-light mCSB_vertical mCSB_inside'
         style={{ maxHeight: '1008px' }}
-        tabindex='0'
+        tabIndex='0'
       >
         <div
           id='mCSB_1_container'
@@ -143,58 +141,3 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => (
     </nav>
   </div>
 );
-
-const Newsletter = () => {
-  return (
-    <section
-      data-aos='fade-up'
-      data-aos-anchor-placement='center-center'
-      className='news_letter'
-    >
-      <div className='auto_container'>
-        <div className='news_letter_content'>
-          <div className='row'>
-            <div className='col-xl-6 col-lg-12'>
-              <div className='news_letter_left p_relative'>
-                <h3>Newsletter</h3>
-                <h4>
-                  To get monthly news, <br />
-                  Subscribe to our newsletter.
-                </h4>
-              </div>
-            </div>
-            <div className='col-xl-6 col-lg-12 ps-xl-0'>
-              <div className='news_letter_right p_relative'>
-                <div className='form-inner p_relative'>
-                  <form
-                    action='index.html'
-                    method='post'
-                    className='subscribe-form'
-                  >
-                    <div className='form-group'>
-                      <input
-                        type='email'
-                        name='email'
-                        placeholder='Your mail address'
-                        required=''
-                      />
-                      <div className='news-form-btn'>
-                        <button
-                          type='submit'
-                          className='news_letter_btn'
-                        ></button>
-                        <a href='' className='btn-1 btn-alt'>
-                          Subscribe <span></span>
-                        </a>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
