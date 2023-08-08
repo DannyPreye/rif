@@ -5,7 +5,7 @@ import React from 'react';
 
 const EachProject = ({ location, date, title, img, link }) => {
   return (
-    <div className='col-xl-4 col-lg-4 relative mt-2 h-[450px] w-[100%] max-w-[450px]'>
+    <div className='col-xl-4 col-lg-2 relative mt-2 h-[450px] w-[100%] max-w-[350px]'>
       <div
         className='causes-card
        event-card wow

@@ -33,7 +33,7 @@ const Parners = () => {
             representative will speak with you immediately.
           </p>
           <div className='header-link-btn'>
-            <Link href='mailto:admin2@atuwateseii.com' className='btn-1'>
+            <Link href='mailto:contact@rif.ng' className='btn-1'>
               Become A Sponsor
               <span></span>
             </Link>

@@ -80,9 +80,8 @@ const Footer = () => {
                     <div className='widget_content'>
                       <ul className='links_list right'>
                         <li>
-                          <a href='mailto:admin2@atuwateseii.com'>
-                            <i className='flaticon-email'></i>{' '}
-                            admin2@atuwateseii.com
+                          <a href='mailto:contact@rif.ng'>
+                            <i className='flaticon-email'></i> contact@rif.ng
                           </a>
                         </li>
                         <li>
@@ -97,7 +96,7 @@ const Footer = () => {
                                                      footer-donate'
                           >
                             <Link
-                              href='mailto:admin2@atuwateseii.com'
+                              href='mailto:contact@rif.ng'
                               className='btn-1 btn-alt'
                             >
                               Become A Volunteer

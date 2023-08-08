@@ -16,7 +16,7 @@ const Main = ({ projects, totalPages }) => {
   return (
     <div className='blog events event-page'>
       <div className='container'>
-        <div className='row items-stretch justify-start  '>
+        <div className='row w-full items-stretch justify-center   '>
           {projects.map((project) => (
             <EachProject
               link={`/past-project/${project.uid}`}

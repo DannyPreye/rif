@@ -40,15 +40,13 @@ function OtherDetails() {
               <h5>Email Address</h5>
               <div className='contact-info'>
                 <div className='contact-info-left'>
-                  <a href='mailto:d.eyo-enoette@atuwateseii.com'>
+                  <a href='mailto:contact@rif.ng'>
                     <i className='fa fa-envelope' />
                   </a>
                 </div>
                 <div className='contact-info-right'>
                   <p>Mail to</p>
-                  <Link href='mailto:d.eyo-enoette@atuwateseii.com'>
-                    admin2@atuwateseii.com
-                  </Link>
+                  <Link href='mailto:contact@rif.ng'>contact@rif.ng</Link>
                 </div>
               </div>
             </div>

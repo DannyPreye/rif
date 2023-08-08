@@ -90,8 +90,8 @@ const MobileMenu = ({ menuOpen, setMenuOpen }) => (
                 <a href='tel:+2348154105285'>(+234)815 4105 285</a>
               </li>
               <li>
-                <a href='mailto:admin2@atuwateseii.com'>
-                  admin2@atuwateseii.com
+                <a href='mailto:contact@rif.ng'>
+                  contact@rif.ng
                 </a>
               </li>
             </ul>
