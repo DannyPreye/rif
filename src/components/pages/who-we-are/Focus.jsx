@@ -26,46 +26,46 @@ const Focus = () => {
                 title={`Combating militancy to
                                 promote positive youth engagement`}
                 content={`
-                                  Engage youth productively to combat
-                                  and diminish militancy, youth restlessness,
-                                  and other vices, redirecting their
-                                  energy towards economic development.
+                                 SDG 8: Engage youth productively to
+                                  combat and diminish militancy, youth
+                                   restlessness, and other vices,
+                                    redirecting their energy towards economic development.
                                 `}
               />
               <EachGoal
                 icon={'icon-service-icon-02'}
                 title={`Learning`}
                 content={`
-                                  Create learning platforms and
-                                  incubation centers to train young aspiring
-                                   entrepreneurs, nurture and
-                                   scale business ideas, and entrench a culture of innovation.
+                              SDG 9: Create learning platforms
+                              and incubation centers to train
+                              young aspiring entrepreneurs,
+                              nurture and scale business ideas,
+                              and entrench a culture of innovation.
                                     `}
               />
               <EachGoal
                 icon={'icon-service-icon-03'}
                 title={`Early childhood development`}
-                content={`Raise the next generation via
-                 the Montessori system as a stop-gap
-                  measure to reducing street children.
+                content={`SDG 4 : Raise the next
+                 generation via the
+                Montessori system as a stop-gap
+                measure to reducing street children.
                                 `}
               />
               <EachGoal
                 icon={'icon-service-icon-04'}
                 title={`Enabling platforms for entrepreneurs`}
-                content={`Accelerate funding opportunities,
-                 thereby removing barriers to finance, deepening financial inclusion, and de-risking young
-                aspiring entrepreneurs, making them eligible
-                for further small business loans to fund growth.`}
+                content={`SDG 9: Accelerate funding opportunities, thereby removing barriers to finance,
+                 deepening financial inclusion, and de-risking
+                young aspiring entrepreneurs, making them eligible for further small business loans to fund growth.`}
               />
               <EachGoal
                 type={'job'}
                 icon={'icon-service-icon-05'}
                 title={`Job Creation`}
-                content={`Support the Federal and
-                 State Government's job creation and
-                 skilling efforts by empowering more
-                 young people to gainful employment and become job creators.
+                content={`SDG 8: Support the
+                Federal and State Government's job creation and skilling efforts
+                 by empowering more young people to gainful employment and become job creators.
                                 `}
               />
             </div>
