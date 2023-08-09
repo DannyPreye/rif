@@ -24,7 +24,7 @@ const Blog = ({ posts, totalPages }) => {
               writer={'Admin'}
               title={post?.data?.title}
               content={post.data.content}
-              createdDate={'20 Feb 2022'}
+              createdDate={post?.first_publication_date}
               link={`/blog/${post.data.category.slug}/${post.uid}`}
             />
           ))}

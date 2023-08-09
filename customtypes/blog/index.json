@@ -30,7 +30,11 @@
       },
       "category": {
         "type": "Link",
-        "config": { "label": "Category", "select": "document" }
+        "config": {
+          "label": "Category",
+          "select": "document",
+          "customtypes": ["blog_category"]
+        }
       },
       "slices": {
         "type": "Slices",
