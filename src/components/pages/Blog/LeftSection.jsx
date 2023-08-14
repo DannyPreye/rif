@@ -6,12 +6,12 @@ import React from 'react';
 const LeftSection = ({ categories, recentPosts }) => {
   return (
     <div className='col-xl-4 col-lg-4'>
-      <div className='causes-details-card event-details-card'>
+      {/* <div className='causes-details-card event-details-card'>
         <div className='blog-details-left-form'>
           <input type='search' name='search' placeholder='Search' />
           <i className='flaticon-search-interface-symbol'></i>
         </div>
-      </div>
+      </div> */}
 
       <div className='causes-details-card'>
         <div className='causes-details-title'>

@@ -8,7 +8,7 @@ const BlogDetails = ({ blog, categories, recentPosts }) => {
   return (
     <section className='causes causes-page'>
       <div className='container'>
-        <div className='row'>
+        <div className='row  flex-wrap-reverse'>
           <LeftSection categories={categories} recentPosts={recentPosts} />
 
           <div className='col-xl-8 col-lg-8'>
