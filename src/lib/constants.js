@@ -19,4 +19,8 @@ export const menus = [
     title: 'Blog',
     link: '/blog',
   },
+  {
+    title: 'Impact Reports',
+    link: '/impact-report',
+  },
 ];

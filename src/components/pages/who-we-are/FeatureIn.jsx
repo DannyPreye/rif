@@ -35,14 +35,18 @@ const features = [
   },
 ];
 
-const FeatureIn = () => {
+const FeatureIn = ({ featured_in }) => {
   return (
     <section className='bg-whit mb-[10rem]  px-5'>
       <div className='container relative mx-auto '>
         <h3 className=' text-[2rem]'>Featured in</h3>
         <div className='row mt-8 gap-3 '>
-          {features.map((feature, id) => (
-            <FeatureCard key={id} {...feature} />
+          {featured_in?.map((feature) => (
+            <FeatureCard
+              key={feature.id}
+              image={feature?.data?.logo?.url}
+              link={feature?.data?.link}
+            />
           ))}
         </div>
       </div>

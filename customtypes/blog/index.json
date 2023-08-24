@@ -19,6 +19,10 @@
           "thumbnails": []
         }
       },
+      "short_description": {
+        "type": "Text",
+        "config": { "label": "Short Description", "placeholder": "" }
+      },
       "content": {
         "type": "StructuredText",
         "config": {
@@ -35,11 +39,6 @@
           "select": "document",
           "customtypes": ["blog_category"]
         }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": { "choices": {} }
       }
     },
     "Meta Data": {

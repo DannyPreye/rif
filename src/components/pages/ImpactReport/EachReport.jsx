@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const { default: Link } = require('next/link');
 
-const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
+const EachReport = ({ createdDate, title, content, link, img, alt }) => {
   return (
     <div className='col-xl-4 col-lg-4 mt-4 min-h-full'>
       <div
@@ -18,6 +18,7 @@ const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
         }}
       >
         <Link
+          target='_blank'
           style={{
             height: '316px',
           }}
@@ -43,14 +44,9 @@ const EachBlog = ({ createdDate, title, content, link, img, alt, writer }) => {
             {content.split(' ').length > 13 && '...'}
           </p>
         </div>
-        <div className='blog-btn'>
-          <Link href={link || '#'}>
-            Read More <i className='flaticon-arrow-right'></i>
-          </Link>
-        </div>
       </div>
     </div>
   );
 };
 
-export default EachBlog;
+export default EachReport;

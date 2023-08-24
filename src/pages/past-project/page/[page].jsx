@@ -37,8 +37,9 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ previewData }) => {
+export const getStaticProps = async ({ previewData, params }) => {
   const client = createClient({ previewData });
+  const { page } = params;
 
   const projects = await client.getByType('past_project', {
     pageSize: 9,
@@ -46,6 +47,15 @@ export const getStaticProps = async ({ previewData }) => {
       field: 'document.first_publication_date',
       direction: 'desc',
     },
+    page: page || 1,
+    graphQuery: `{
+      past_project{
+        title
+        location
+        featured_image
+        project_date
+      }
+    }`,
   });
 
   return {

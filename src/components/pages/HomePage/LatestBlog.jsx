@@ -28,7 +28,7 @@ const LatestBlog = ({ posts }) => {
               alt={post?.data?.featured_image?.alt}
               writer={'Admin'}
               title={post?.data?.title}
-              content={post?.data.content}
+              content={post?.data.short_description}
               createdDate={'20 Feb 2022'}
               link={`/blog/${post?.data?.category?.slug}/${post.uid}`}
             />

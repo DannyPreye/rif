@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import HomePage from '@/components/pages/HomePage';
 import { createClient } from '@/prismicio';
 import Layout from '../components/layout/Layout';
+import { fetchBlogPosts } from '@/lib/queryHelper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,17 +19,11 @@ export default function Home({ blogs }) {
 export const getStaticProps = async ({ previewData }) => {
   const client = createClient({ previewData });
 
-  const blogs = await client.getByType('blog', {
-    pageSize: 4,
-    orderings: {
-      field: 'document.first_publication_date',
-      direction: 'desc',
-    },
-  });
+  const { posts, totalPages } = await fetchBlogPosts(client, 6);
 
   return {
     props: {
-      blogs: blogs.results,
+      blogs: posts,
     },
     revalidate: 60,
   };

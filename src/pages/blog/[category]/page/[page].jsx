@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { createClient } from '@/prismicio';
 import * as prismic from '@prismicio/client';
 import Blog from '@/components/pages/Blog';
+import { fetchBlogPostsByCategory } from '@/lib/queryHelper';
 
 const CategoryPages = ({ blogPosts, totalPages }) => {
   const router = useRouter();
@@ -52,7 +53,7 @@ export const getStaticPaths = async () => {
 
     return {
       paths,
-      fallback: true,
+      fallback: false,
     };
   }
 };
@@ -61,27 +62,17 @@ export const getStaticProps = async ({ previewData, params }) => {
   const { category: categorySlug, page } = params;
   const client = createClient({ previewData });
 
-  const getCategoryBySlug = await client.getByUID(
-    'blog_category',
+  const { totalPages, posts } = await fetchBlogPostsByCategory(
+    client,
+    9,
+    page,
     categorySlug
   );
 
-  const categoryId = getCategoryBySlug.id;
-
-  const blogPosts = await client.getByType('blog', {
-    filters: [prismic.filter.at('my.blog.category', categoryId)],
-    pageSize: 9,
-    page: 1,
-    orderings: {
-      field: 'document.first_publication_date',
-      direction: 'desc',
-    },
-  });
-
   return {
     props: {
-      blogPosts: blogPosts.results,
-      totalPages: blogPosts.total_pages,
+      blogPosts: posts,
+      totalPages: totalPages,
     },
   };
 };

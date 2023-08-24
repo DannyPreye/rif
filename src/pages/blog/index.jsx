@@ -6,6 +6,7 @@ import React from 'react';
 import Layout from '../../components/layout/Layout';
 import Head from 'next/head';
 import defaultMetadata from '@/METADATA';
+import { fetchBlogPosts } from '@/lib/queryHelper';
 
 const index = ({ blogs, totalPages }) => {
   return (
@@ -21,17 +22,12 @@ const index = ({ blogs, totalPages }) => {
 export const getStaticProps = async ({ previewData }) => {
   const client = createClient({ previewData });
 
-  const blogs = await client.getByType('blog', {
-    pageSize: 9,
-    orderings: {
-      field: 'document.first_publication_date',
-      direction: 'desc',
-    },
-  });
+  const { posts, totalPages } = await fetchBlogPosts(client);
+
   return {
     props: {
-      blogs: blogs.results,
-      totalPages: blogs.total_pages,
+      blogs: posts,
+      totalPages: totalPages,
     },
     revalidate: 60,
   };

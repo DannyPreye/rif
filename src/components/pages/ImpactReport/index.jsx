@@ -1,12 +1,13 @@
-import React from 'react';
-import EachBlog from './EachBlog';
-import Link from 'next/link';
+import { Link } from 'lucide-react';
 import { useRouter } from 'next/router';
+import EachReport from './EachReport';
 
-const Blog = ({ posts, totalPages }) => {
+const Report = ({ posts, totalPages }) => {
   const router = useRouter();
   const currentPage = Number(router.query.page) || 1;
   const pathname = router.asPath.split('/page')[0];
+
+  console.log(posts);
 
   const pageNumbers = Array.from(
     { length: totalPages },
@@ -17,15 +18,14 @@ const Blog = ({ posts, totalPages }) => {
       <div className='container'>
         <div className='row gap-y-5'>
           {posts.map((post) => (
-            <EachBlog
+            <EachReport
               key={post.id}
               img={post?.data?.featured_image?.url}
               alt={post?.data?.featured_image?.alt}
-              writer={'Admin'}
               title={post?.data?.title}
               content={post.data.short_description}
               createdDate={post?.first_publication_date}
-              link={`/blog/${post.data.category.slug}/${post.uid}`}
+              link={post?.data?.report?.url}
             />
           ))}
           <div className='col-xl-12'>
@@ -39,7 +39,7 @@ const Blog = ({ posts, totalPages }) => {
                   ))}
                 {currentPage < totalPages && (
                   <li>
-                    <Link href={`/blog/page/${currentPage + 1}`}>
+                    <Link href={`/impact-report/page/${currentPage + 1}`}>
                       <i className='flaticon-right-arrow-1'></i>
                     </Link>
                   </li>
@@ -53,4 +53,4 @@ const Blog = ({ posts, totalPages }) => {
   );
 };
 
-export default Blog;
+export default Report;

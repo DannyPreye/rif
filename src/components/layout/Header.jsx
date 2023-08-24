@@ -53,7 +53,7 @@ const Header = ({ setMenuOpen, isVisible }) => {
           <div className='header_bottom p_relative'>
             <div className='logo__shape'></div>
             <div className='auto_container'>
-              <div className='outer-box'>
+              <div className='outer-box flex-nowrap'>
                 <div className='logo-box'>
                   <figure className='logo'>
                     <Link href='/'>
@@ -81,7 +81,7 @@ const Header = ({ setMenuOpen, isVisible }) => {
                                         navbar-expand-md navbar-light'
                   >
                     <div className=' clearfix show' id='navbarSupportedContent'>
-                      <ul className='navigation clearfix'>
+                      <ul className='hidden items-center gap-4 lg:flex'>
                         {menus.map((menu) => (
                           <li key={'main' + menu.title}>
                             <Link href={menu.link}> {menu.title}</Link>
@@ -91,12 +91,9 @@ const Header = ({ setMenuOpen, isVisible }) => {
                     </div>
                   </nav>
                 </div>
-                <div className='header__right '>
-                  <div className='header__right__button'>
-                    <div
-                      className='header-link-btn
-                                         hidden lg:block'
-                    >
+                <div className='header__right hidden w-fit lg:block '>
+                  <div className='header__right__button w-fit'>
+                    <div className='header-link-btn '>
                       <Link
                         href='mailto:contact@rif.ng'
                         target='_blank'

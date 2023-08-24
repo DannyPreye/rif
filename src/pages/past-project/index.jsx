@@ -26,6 +26,14 @@ export const getStaticProps = async ({ previewData }) => {
       field: 'document.first_publication_date',
       direction: 'desc',
     },
+    graphQuery: `{
+      past_project{
+        title
+        location
+        featured_image
+        project_date
+      }
+    }`,
   });
 
   return {

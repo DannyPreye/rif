@@ -33,7 +33,23 @@ export default function App({ Component, pageProps }) {
       <Head>
         <link rel='icon' type={'image/png'} href={SEO.logo} />
       </Head>
-      <DefaultSeo {...SEO} />
+      <DefaultSeo
+        title={SEO.title}
+        canonical={SEO.canonical}
+        description={SEO.description}
+        openGraph={{
+          title: SEO.title,
+          images: [
+            {
+              url: `https://rif.ng/${SEO.logo}`,
+            },
+          ],
+          url: SEO.openGraph.url,
+          siteName: SEO.openGraph.site_name,
+          locale: SEO.openGraph.locale,
+          type: SEO.openGraph.type,
+        }}
+      />
       <Component {...pageProps} />
       <ToastContainer />
     </>
