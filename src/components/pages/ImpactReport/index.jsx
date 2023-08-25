@@ -18,7 +18,7 @@ const Report = ({ posts, totalPages }) => {
       <section
         className='common-banner relative'
         style={{
-          backgroundImage: "url('assets/iwere-banner-3.jpg')",
+          backgroundImage: "url('assets/iwere-banner.jpeg')",
         }}
       >
         <div className='absolute left-0 top-0 h-full w-full bg-[#1b1a1a44] backdrop-blur-sm'></div>
