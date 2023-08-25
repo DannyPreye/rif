@@ -18,10 +18,10 @@ const EachReport = ({ createdDate, title, content, link, img, alt }) => {
         }}
       >
         <Link
-          target='_blank'
           style={{
             height: '316px',
           }}
+          target='_blank'
           href={link || '#'}
           className='causes-image
                  blog-image   relative block h-[316px] bg-gray-200'
@@ -30,13 +30,13 @@ const EachReport = ({ createdDate, title, content, link, img, alt }) => {
         </Link>
         <div className='blog-contant'>
           <div className='header-link-btn'>
-            <Link href={link || ''} className='btn-1'>
+            <Link target='_blank' href={link || ''} className='btn-1'>
               {moment(createdDate).format('MMMM DD, YYYY')}
               <span></span>
             </Link>
           </div>
           <div className='comments'></div>
-          <Link href={link || '#'} className='hover-content'>
+          <Link target='_blank' href={link || '#'} className='hover-content'>
             {title}
           </Link>
           <p>
