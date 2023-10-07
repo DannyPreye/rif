@@ -1,19 +1,14 @@
-import '../../public/assets/css/font-awesome-all.css';
-// import "../../public/assets/css/owl.css";
-import '../../public/assets/css/flaticon_save_us.css';
-import '../../public/assets/css/bootstrap.css';
-import '../../public/assets/css/jquery.fancybox.min.css';
+import '../../public/assets/css/bootstrap.min.css';
 import '../../public/assets/css/magnific-popup.css';
-import '../../public/assets/css/progresscircle.css';
-import '../../public/assets/css/icomoon.css';
-import '../../public/assets/css/animate.css';
-import '../../public/assets/css/color.css';
+// import '../../public/assets/css/font-awesome.min.css';
+// import '../../public/assets/css/themify-icons.css';
 import '../../public/assets/css/nice-select.css';
-import '../../public/assets/css/global.css';
+// import '../../public/assets/css/flaticon.css';
+// import '../../public/assets/css/gijgo.css';
+import '../../public/assets/css/animate.css';
+import '../../public/assets/css/slicknav.css';
 import '../../public/assets/css/style.css';
-import '../../public/assets/css/swiper.min.css';
-import '../../public/assets/css/responsive.css';
-import '@/styles/globals.css';
+
 import Head from 'next/head';
 import SEO from '@/METADATA';
 import AOS from 'aos';
@@ -23,6 +18,7 @@ import Aos from 'aos';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { DefaultSeo } from 'next-seo';
+import '@/styles/globals.css';
 export default function App({ Component, pageProps }) {
   useEffect(() => {
     AOS.init({ once: true, duration: 1500 });

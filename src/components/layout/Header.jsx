@@ -3,149 +3,148 @@ import { Instagram } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 
 const Header = ({ setMenuOpen, isVisible }) => {
   return (
     <>
-      <header
-        className={`main-header style-one ${isVisible && 'fixed-header'}`}
-      >
-        <div className='header-lower'>
-          <div className='header_top'>
-            <div className='auto_container'>
-              <div className='header_top_left'>
-                <ul className='top_left'>
-                  <li>
-                    <a href='tel:+2348154105285'>
-                      <i
-                        className='flaticon-phone-call
-                                    '
-                      ></i>
-                      (+234)815 4105 285
-                    </a>
-                  </li>
-                  <li>
-                    <a href='mailto:contact@rif.ng'>
-                      <i className='flaticon-email'></i> contact@rif.ng
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className='header_top_right'>
-                <div className='header_right_info'>
-                  <ul className='top_right items-center'>
-                    <li>
-                      <a href='https://www.linkedin.com/company/royal-iwere-foundation'>
-                        <i className='flaticon-linkedin'></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href='https://www.instagram.com/royaliwerefoundation/'>
-                        <Instagram size={16} />
-                      </a>
-                    </li>
-                  </ul>
+      <header className=''>
+        <div className='header-area '>
+          <div className='header-top_area'>
+            <div className='container-fluid'>
+              <div className='flex items-center justify-center md:justify-between '>
+                <div className='col-xl-6 col-md-12 col-lg-8 hidden md:block'>
+                  <div className='short_contact_list'>
+                    <ul className='font-museo '>
+                      <li>
+                        <Link
+                          className='font-museo text-primary-pink hover:text-primary-green-1'
+                          href='tel:+2348154105285'
+                        >
+                          <i className='fa fa-phone'></i> (+234)815 4105 285
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className='font-museo text-primary-pink hover:text-primary-green-1'
+                          href='mailto:contact@rif.ng'
+                        >
+                          <i className='fa fa-envelope'></i>Contact@rif.ng
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className=' '>
+                  <div className='social_media_links flex font-museo '>
+                    <Link
+                      className='text-primary-pink hover:scale-95 hover:text-primary-green-1 '
+                      href='#'
+                    >
+                      <AiFillInstagram size={24} />
+                    </Link>
+                    <Link
+                      className='text-primary-pink hover:scale-95 hover:text-primary-green-1 '
+                      href='#'
+                    >
+                      <AiFillLinkedin size={24} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className='header_bottom p_relative'>
-            <div className='logo__shape'></div>
-            <div className='auto_container'>
-              <div className='outer-box flex-nowrap'>
-                <div className='logo-box'>
-                  <figure className='logo'>
+          <div
+            id='sticky-header'
+            className={`main-header-area  ${
+              isVisible && 'sticky left-0 top-0'
+            }`}
+          >
+            <div className='container-fluid  '>
+              <div className='row  align-items-center '>
+                <div className='col-xl-3 col-lg-3 '>
+                  <div className='logo'>
                     <Link href='/'>
                       <Image
-                        src='/assets/images/logo.png'
-                        alt='rif logo'
-                        width={130}
-                        height={90}
-                        priority
+                        width={200}
+                        height={150}
+                        src='/assets/images/logo-white.png'
+                        alt=''
                       />
                     </Link>
-                  </figure>
-                </div>
-                <div className='menu-area'>
-                  <div
-                    onClick={() => setMenuOpen((prev) => !prev)}
-                    className='mobile-nav-toggler'
-                  >
-                    <i className='icon-bar'></i>
-                    <i className='icon-bar'></i>
-                    <i className='icon-bar'></i>
                   </div>
-                  <nav
-                    className='main-menu
-                                        navbar-expand-md navbar-light'
-                  >
-                    <div className=' clearfix show' id='navbarSupportedContent'>
-                      <ul className='hidden items-center gap-4 lg:flex'>
-                        {menus.map((menu) => (
-                          <li key={'main' + menu.title}>
-                            <Link href={menu.link}> {menu.title}</Link>
+                </div>
+                <div className='col-xl-9  col-lg-9 '>
+                  <div className='hidden justify-between lg:flex  '>
+                    <nav>
+                      <ul className=' flex gap-2 '>
+                        {menus.map((menu, id) => (
+                          <li>
+                            <Link
+                              className='font-open-sans text-white hover:text-gray-200 '
+                              href={menu.link}
+                            >
+                              {menu.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </nav>
+                    <div className='Appointment'>
+                      <div className='book_btn d-none d-lg-block'>
+                        <a data-scroll-nav='1' href='#'>
+                          Become a
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-12'>
+                  <div className='mobile_menu d-block d-lg-none'>
+                    <div className='slicknav_menu'>
+                      <div
+                        // href='#'
+                        aria-haspopup='true'
+                        role='button'
+                        onClick={() => setMenuOpen((prev) => !prev)}
+                        tabindex='0'
+                        className='slicknav_btn slicknav_collapsed'
+                        style={{ outline: 'none' }}
+                      >
+                        <span className='slicknav_menutxt'>MENU</span>
+                        <span className='slicknav_icon'>
+                          <span className='slicknav_icon-bar'></span>
+                          <span className='slicknav_icon-bar'></span>
+                          <span className='slicknav_icon-bar'></span>
+                        </span>
+                      </div>
+                      <ul
+                        className='slicknav_nav slicknav_hidden'
+                        aria-hidden='true'
+                        role='menu'
+                        style={{ display: 'none' }}
+                      >
+                        {menus.map((menu, id) => (
+                          <li>
+                            <Link
+                              href={menu.link}
+                              role='menuitem'
+                              tabindex='-1'
+                            >
+                              {menu.title}
+                            </Link>
                           </li>
                         ))}
                       </ul>
                     </div>
-                  </nav>
-                </div>
-                <div className='header__right hidden w-fit lg:block '>
-                  <div className='header__right__button w-fit'>
-                    <div className='header-link-btn '>
-                      <Link
-                        href='mailto:contact@rif.ng'
-                        target='_blank'
-                        className='btn-1 btn-alt'
-                      >
-                        Become A Volunteer<span></span>
-                      </Link>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <StickHeader />
       </header>
     </>
-  );
-};
-
-const StickHeader = () => {
-  return (
-    <div className='sticky-header'>
-      <div className='auto_container'>
-        <div className='outer-box'>
-          <div className='logo-box'>
-            <figure className='logo'>
-              <Link href='/'>
-                <img src='/assets/images/logo.png' alt='' />
-              </Link>
-            </figure>
-          </div>
-          <div className='menu-area'>
-            <nav className='main-menu clearfix'>
-              <div
-                className=' navbar-collapse show clearfix'
-                id='navbarSupportedContent'
-              >
-                <ul className='navigation clearfix'>
-                  {menus.map((menu) => (
-                    <li key={menu.title}>
-                      <Link href={menu.link}> {menu.title}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
   );
 };
 

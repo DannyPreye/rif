@@ -1,54 +1,55 @@
-import React from "react";
-import EachGoal from "./EachGoal";
+import React from 'react';
+import EachGoal from './EachGoal';
+
+const focus = [
+  {
+    text: 'Combating militancy to promote positive youth engagement',
+    image: '/assets/images/focus/youth-rif.svg',
+  },
+  {
+    text: 'Job Creation',
+    image: '/assets/images/focus/youth-rif.svg',
+  },
+];
 
 const WhatWeDo = () => {
-    return (
-        <section className="services">
-            <div className="container">
-                <div className="row">
-                    <div className="col-xl-12">
-                        <div className="align-title">
-                            <h5>What we do</h5>
-                            <h3>
-                                We are primarily focused on areas that border on
-                                the following;
-                            </h3>
-                            <div className="title-shape">
-                                <img
-                                    src="assets/images/shape/service-title-shape.png"
-                                    alt="map"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="service-content-wrapper">
-                        <div className="row">
-                            <EachGoal
-                                serviceNumber={"1"}
-                                icon={"icon-service-icon-01"}
-                                title={`Combating militancy to promote positive youth engagement`}
-                            />
-                            <EachGoal
-                                delay={100}
-                                icon={"icon-service-icon-02"}
-                                title={`Job creation`}
-                            />
-                            <EachGoal
-                                delay={200}
-                                icon={"icon-service-icon-03"}
-                                title={`Early childhood development`}
-                            />
-                            <EachGoal
-                                delay={300}
-                                icon={"icon-service-icon-04"}
-                                title={`Enabling platforms for entrepreneurs`}
-                            />
-                        </div>
-                    </div>
-                </div>
+  return (
+    <div className='reson_area section_padding'>
+      <div className='container'>
+        <div className='row justify-content-center'>
+          <div className='col-lg-6'>
+            <div className='section_title mb-55 text-center'>
+              <h3>
+                <span>What We do</span>
+              </h3>
+              <p>
+                We Are Primarily Focused On Areas That Border On The Following
+              </p>
             </div>
-        </section>
-    );
+          </div>
+        </div>
+        <div className='row justify-content-center'>{}</div>
+      </div>
+    </div>
+  );
 };
 
 export default WhatWeDo;
+
+const EachFocusCard = ({focus}) => {
+  return (
+    <div className='col-lg-4 col-md-6'>
+      <div className='single_reson'>
+        <div className='thum'>
+          <div className='thum_1'>
+            <img src='img/help/3.png' alt='' />
+          </div>
+        </div>
+        <div className='help_content'>
+          <h4>Friendly Volunteer</h4>
+         
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -1,127 +1,119 @@
 import { Instagram } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 
 const Footer = () => {
   return (
-    <footer className='main__footer p_relative pt-8'>
-      <div
-        className=' '
-        style={{
-          backgroundImage: 'url(assets/images/shape/shape-01.png)',
-        }}
-      >
-        <div className='footer__middle  p_relative d_block'>
-          <div className='auto_container'>
-            <div className='footer__middle__content'>
-              <div className='row clearfix'>
-                <div className='col-lg-4 col-md-6 col-sm-12 footer_column'>
-                  <div className='footer_widget left'>
-                    <div className='footer__logo'>
-                      <figure>
-                        <img src='/assets/images/logo-white.png' alt='' />
-                      </figure>
-                    </div>
-                    <div className='widget_content'>
-                      <p>
-                        This foundation was born out of a strategic rethink of
-                        the Warri Kingdom from the lens of its people, its
-                        socio-economic potential and the limitless possibilities
-                        for growth and advancement via education and upskilling
-                        across various demographics.
-                      </p>
-                    </div>
-                    <div className='widget_media'>
-                      <ul>
-                        <li>
-                          <a href='https://www.linkedin.com/company/royal-iwere-foundation'>
-                            <i className='flaticon-linkedin'></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href='https://www.instagram.com/royaliwerefoundation/'>
-                            <Instagram size={16} className='z-10' />
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+    <footer class='footer'>
+      <div class='footer_top'>
+        <div class='container'>
+          <div class='row items-start justify-between'>
+            <div class='col-xl-4 col-md-6 col-lg-4 '>
+              <div class='footer_widget'>
+                <div class='footer_logo'>
+                  <a href='#'>
+                    <Image
+                      width={200}
+                      height={80}
+                      src='/assets/images/logo.png'
+                      alt=''
+                    />
+                  </a>
                 </div>
-                <div className='col-lg-2 col-md-6 col-sm-12 footer_column'></div>
-                <div className='col-lg-3 col-md-6 col-sm-12 footer_column'>
-                  <div className='footer_widget links_widget'>
-                    <div className='widget_title'>
-                      <h4>Quick Link</h4>
-                    </div>
-                    <div className='widget_content'>
-                      <ul className='links_list clearfix'>
-                        <li>
-                          <Link href='/'>Home</Link>
-                        </li>
-                        <li>
-                          <Link href='/who-we-are'>Who we are</Link>
-                        </li>
-                        <li>
-                          <Link href='/contact-us'>Contact Us</Link>
-                        </li>
-                        <li>
-                          <Link href='/blog'>Blog</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                <p class='address_text text-justify'>
+                  This foundation was born out of a strategic rethink of the
+                  Warri Kingdom from the lens of its people, its socio-economic
+                  potential and the limitless possibilities for growth and
+                  advancement via education and upskilling across various
+                  demographics.
+                </p>
+                <div class='socail_links'>
+                  <ul>
+                    <li>
+                      <Link
+                        className='text-primary-green-1 hover:scale-95 hover:text-primary-pink '
+                        href='#'
+                      >
+                        <AiFillInstagram size={24} />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className='text-primary-green-1 hover:scale-95 hover:text-primary-pink '
+                        href='#'
+                      >
+                        <AiFillLinkedin size={24} />
+                      </Link>
+                    </li>
+                    <li>
+                      <a href='#'>
+                        <i class='fa fa-dribbble'></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href='#'>
+                        <i class='fa fa-instagram'></i>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
-
-                <div className='col-lg-3 col-md-6 col-sm-12 footer_column'>
-                  <div className='footer_widget links_widget'>
-                    <div className='widget_title'>
-                      <h4>Contact</h4>
-                    </div>
-                    <div className='widget_content'>
-                      <ul className='links_list right'>
-                        <li>
-                          <a href='mailto:contact@rif.ng'>
-                            <i className='flaticon-email'></i> contact@rif.ng
-                          </a>
-                        </li>
-                        <li>
-                          <a href='tel:+2348154105285'>
-                            <i className='flaticon-phone-call'></i>
-                            (+234)815 4105 285
-                          </a>
-                        </li>
-                        <li>
-                          <div
-                            className='header-link-btn
-                                                     footer-donate'
-                          >
-                            <Link
-                              href='mailto:contact@rif.ng'
-                              className='btn-1 btn-alt'
-                            >
-                              Become A Volunteer
-                              <span></span>
-                            </Link>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class='col-xl-2 col-md-6 col-lg-2'>
+              <div class='footer_widget'>
+                <h3 class='footer_title'>Services</h3>
+                <ul class='links'>
+                  <li>
+                    <a href='#'>Donate</a>
+                  </li>
+                  <li>
+                    <a href='#'>Sponsor</a>
+                  </li>
+                  <li>
+                    <a href='#'>Fundraise</a>
+                  </li>
+                  <li>
+                    <a href='#'>Volunteer</a>
+                  </li>
+                  <li>
+                    <a href='#'>Partner</a>
+                  </li>
+                  <li>
+                    <a href='#'>Jobs</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='col-xl-3 col-md-6 col-lg-3'>
+              <div class='footer_widget'>
+                <h3 class='footer_title'>Contacts</h3>
+                <div class='contacts'>
+                  <p>
+                    (+234)815 4105 285 <br />
+                    Contact@rif.ng <br />
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className='footer_bottom p_relative'>
-        <div className='auto_container'>
-          <div className='bottom_inner  p_relative'>
-            <div className='copyright'>
-              <p>
-                {' '}
-                Royal Iwere Foundation © {new Date().getFullYear()}. All Rights
-                Reserved.
+      <div class='copy-right_text'>
+        <div class='container'>
+          <div class='row'>
+            <div class='bordered_1px '></div>
+            <div class='col-xl-12'>
+              <p class='copy_right text-center'>
+                Copyright © {new Date().getFullYear()} All rights reserved |
+                This template is made with{' '}
+                <i class='ti-heart' aria-hidden='true'></i> by{' '}
+                <a href='https://colorlib.com' target='_blank'>
+                  Colorlib
+                </a>
               </p>
+              <p></p>
             </div>
           </div>
         </div>
