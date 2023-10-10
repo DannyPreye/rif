@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 // import axios from 'axios';
+import Image from 'next/image';
 import { toast } from 'react-toastify';
 
 const ContactForm = () => {
@@ -40,15 +41,19 @@ const ContactForm = () => {
   };
 
   return (
-    <section className='contact-us'>
-      <div
+    <section className='contact-us grid md:grid-cols-2 px-8 items-center justify-center text-white bg-green-900'>
+      <div>
+        <Image src='/assets/images/home/rif-woman.jpeg' className='rounded-md' alt='lkwd' height='500' width='500'/>
+      </div>
+ <div>
+ <div
         className='pattern-layer'
         style={{
           backgroundImage: 'url(assets/images/shape/shape-02.png)',
         }}
       ></div>
       <div className='container'>
-        <form onSubmit={handleSubmit} className='row'>
+        {/* <form onSubmit={handleSubmit} className='row'>
           <div data-aos='fade-up' className='col-xl-12'>
             <div className='align-title'>
               <h5>Contact with us</h5>
@@ -140,9 +145,37 @@ const ContactForm = () => {
               </div>
             </div>
           </div>
-        </form>
+        </form> */}
+        <form class="w-full max-w-lg">
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide  text-white text-xs font-bold mb-2" for="grid-first-name">
+        First Name
+      </label>
+      <input class="appearance-none block w-full bg-gray-200  text-white border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" />
+      <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide  text-white text-xs font-bold mb-2" for="grid-last-name">
+        Last Name
+      </label>
+      <input class="appearance-none block w-full bg-gray-200  text-white border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" />
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full px-3">
+      <label class="block uppercase tracking-wide  text-white text-xs font-bold mb-2" for="grid-password">
+        Password
+      </label>
+      <input class="appearance-none block w-full bg-gray-200  text-white border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************" />
+      <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
+    </div>
+  </div>
+
+</form>
       </div>
       {/* <ToastContainer /> */}
+ </div>
     </section>
   );
 };

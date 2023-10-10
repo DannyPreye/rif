@@ -3,7 +3,7 @@ import EachBlog from '../Blog/EachBlog';
 
 const LatestBlog = ({ posts }) => {
   return (
-    <section className='blog bg-white'>
+    <section className='blog bg-white md:py-16'>
       <div className='blank'></div>
       <div className='container '>
         <div className='row items-stretch '>
@@ -14,9 +14,10 @@ const LatestBlog = ({ posts }) => {
                 style={{
                   fontSize: ' 1.2rem',
                   lineHeight: '20px',
+                  padding:'10px 10px'
                 }}
               >
-                The Team at RIF is constantly coming up with helpful resources
+                The Team at RIF is constantly coming up with helpful <br /> resources
                 from our various programs. Stay glued for updates!
               </h3>
             </div>

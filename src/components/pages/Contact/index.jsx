@@ -4,7 +4,7 @@ import OtherDetails from "./OtherDetails";
 
 const Index = () => {
     return (
-        <main className="mb-[12rem] ">
+        <main className="pt-[8rem] bg-green-900 ">
             <ContactForm />
             <OtherDetails />
         </main>

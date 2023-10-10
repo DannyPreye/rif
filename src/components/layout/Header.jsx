@@ -1,151 +1,177 @@
-import { menus } from '@/lib/constants';
-import { Instagram } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import { AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+'use client'
+import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { RiMoonFill, RiSunFill } from 'react-icons/ri'
+import { FaAngleDown, FaAngleLeft, FaAngleRight, FaAngleUp, FaBars, FaTimes } from 'react-icons/fa'
+import { useRouter } from 'next/router'
+import { CSSTransition } from 'react-transition-group'
+const MainNav = () => {
+  const [nav, setNav] = useState(false);
+  const [DropdownOpen, setDropdownOpen] = useState(false);
+  const [innerDropdownOpen, setInnerDropdownOpen] = useState(false);
+  const [innerDropdownOpen2, setInnerDropdownOpen2] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
-const Header = ({ setMenuOpen, isVisible }) => {
+  useEffect(() => {
+    // Load dark mode state from local storage
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode === 'true') {
+      document.body.classList.add('dark');
+      setDarkMode(true);
+    }
+
+    // Automatically switch modes at regular intervals
+    const intervalId = setInterval(switchMode, 1000 * 60); // Check every minute
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  const switchMode = () => {
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinutes = now.getMinutes();
+    const currentTimeInMinutes = currentHour * 60 + currentMinutes;
+
+    // Calculate the time range from 7 AM to 6:30 PM (19:30)
+    const startTimeInMinutes = 7 * 60;
+    const endTimeInMinutes = 19 * 60 + 30;
+
+    if (currentTimeInMinutes >= startTimeInMinutes && currentTimeInMinutes < endTimeInMinutes) {
+      document.body.classList.remove('dark');
+      setDarkMode(false);
+      localStorage.setItem('darkMode', 'false');
+    } else {
+      document.body.classList.add('dark');
+      setDarkMode(true);
+      localStorage.setItem('darkMode', 'true');
+    }
+  };
+
+
+
+
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        innerDropdownOpen &&
+        !event.target.closest('.dropdown-toggle') &&
+        !event.target.closest('.dropdown-menu')
+      ) {
+        setInnerDropdownOpen(false);
+        setInnerDropdownOpen2(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [innerDropdownOpen, innerDropdownOpen2]);
+
+
+
+
+
+
+
+ // Get the router object
+
+  const toggleDropdown = () => {
+
+    setDropdownOpen(!DropdownOpen);
+    setInnerDropdownOpen(false);
+    setInnerDropdownOpen2(false);
+  };
+
+  const toggleInnerDropdown = () => {
+    setInnerDropdownOpen2(false);
+    setInnerDropdownOpen(!innerDropdownOpen);
+  };
+  const toggleInnerDropdown2 = () => {
+    setInnerDropdownOpen(false);
+    setInnerDropdownOpen2(!innerDropdownOpen2);
+  };
+
+  const handleClick = () => {
+    setNav(!nav);
+  };
+
+  const handleOuterDropdownClick = () => {
+    // Toggle the inner dropdown when the outer dropdown link is clicked
+    toggleInnerDropdown();
+  };
   return (
-    <>
-      <header className=''>
-        <div className='header-area '>
-          <div className='header-top_area'>
-            <div className='container-fluid'>
-              <div className='flex items-center justify-center md:justify-between '>
-                <div className='col-xl-6 col-md-12 col-lg-8 hidden md:block'>
-                  <div className='short_contact_list'>
-                    <ul className='font-museo '>
-                      <li>
-                        <Link
-                          className='font-museo text-primary-pink hover:text-primary-green-1'
-                          href='tel:+2348154105285'
-                        >
-                          <i className='fa fa-phone'></i> (+234)815 4105 285
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          className='font-museo text-primary-pink hover:text-primary-green-1'
-                          href='mailto:contact@rif.ng'
-                        >
-                          <i className='fa fa-envelope'></i>Contact@rif.ng
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className=' '>
-                  <div className='social_media_links flex font-museo '>
-                    <Link
-                      className='text-primary-pink hover:scale-95 hover:text-primary-green-1 '
-                      href='#'
-                    >
-                      <AiFillInstagram size={24} />
-                    </Link>
-                    <Link
-                      className='text-primary-pink hover:scale-95 hover:text-primary-green-1 '
-                      href='#'
-                    >
-                      <AiFillLinkedin size={24} />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            id='sticky-header'
-            className={`main-header-area  ${
-              isVisible && 'sticky left-0 top-0'
-            }`}
-          >
-            <div className='container-fluid  '>
-              <div className='row  align-items-center '>
-                <div className='col-xl-3 col-lg-3 '>
-                  <div className='logo'>
-                    <Link href='/'>
-                      <Image
-                        width={200}
-                        height={150}
-                        src='/assets/images/logo-white.png'
-                        alt=''
-                      />
-                    </Link>
-                  </div>
-                </div>
-                <div className='col-xl-9  col-lg-9 '>
-                  <div className='hidden justify-between lg:flex  '>
-                    <nav>
-                      <ul className=' flex gap-2 '>
-                        {menus.map((menu, id) => (
-                          <li>
-                            <Link
-                              className='font-open-sans text-white hover:text-gray-200 '
-                              href={menu.link}
-                            >
-                              {menu.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </nav>
-                    <div className='Appointment'>
-                      <div className='book_btn d-none d-lg-block'>
-                        <a data-scroll-nav='1' href='#'>
-                          Become a
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className='col-12'>
-                  <div className='mobile_menu d-block d-lg-none'>
-                    <div className='slicknav_menu'>
-                      <div
-                        // href='#'
-                        aria-haspopup='true'
-                        role='button'
-                        onClick={() => setMenuOpen((prev) => !prev)}
-                        tabindex='0'
-                        className='slicknav_btn slicknav_collapsed'
-                        style={{ outline: 'none' }}
-                      >
-                        <span className='slicknav_menutxt'>MENU</span>
-                        <span className='slicknav_icon'>
-                          <span className='slicknav_icon-bar'></span>
-                          <span className='slicknav_icon-bar'></span>
-                          <span className='slicknav_icon-bar'></span>
-                        </span>
-                      </div>
-                      <ul
-                        className='slicknav_nav slicknav_hidden'
-                        aria-hidden='true'
-                        role='menu'
-                        style={{ display: 'none' }}
-                      >
-                        {menus.map((menu, id) => (
-                          <li>
-                            <Link
-                              href={menu.link}
-                              role='menuitem'
-                              tabindex='-1'
-                            >
-                              {menu.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    </>
-  );
-};
 
-export default Header;
+    <main>
+      <div className="bg-transparent py-2 border-b z-50  fixed top-0 left-0 right-0 shadow-lg backdrop-filter backdrop-blur-lg">
+
+        <div className='   flex  justify-between items-center container  capitalize h-25 px-5 sticky top-0'>
+<h1>LOgo</h1>
+
+          <ul className="hidden sm:flex items-center font-bold text-gray-300">
+            <li className={`px-4 py-5 cursor-pointer hover:text-[#ff5c00] `} ><Link href='/'>Home</Link></li>
+            <li className={`px-4 py-5 cursor-pointer hover:text-[#ff5c00] `}><Link href='/who-we-are' >Who We Are</Link></li>
+            <li className={`px-4 py-5 cursor-pointer hover:text-[#ff5c00] `}> <Link href='/past-project' >Past project </Link></li>
+            <li className={`px-4 py-5 cursor-pointer hover:text-[#ff5c00] `}> <Link href='/contact-us' > Contact us </Link></li>
+            <li className={`px-4 py-5 cursor-pointer hover:text-[#ff5c00] `}> <Link href='/blog' > Blog</Link></li>
+            <li className={`px-4 py-5 cursor-pointer hover:text-[#ff5c00] `}> <Link href='/impact-report' > impact report</Link></li>
+
+      
+
+
+            <li className={`px-4 py-5 `}> <Link href='/portfolio' className='boxed-btn3'>Beacome A Volunteer</Link></li>
+          </ul>
+
+     
+
+
+
+          <div onClick={handleClick} className="block sm:hidden text-white py-5">
+            {!nav && <FaBars className=' ease-in-out duration-700' size={20} />}
+
+
+          </div>
+          <div className={nav ? 'fixed top-0 bg-white dark:bg-gray-800 z divide-y divide-gray-500  left-0 w-[100%]   border-r h-full   border-r-gray-600 ease-out duration-700' : 'fixed left-[-100%]   duration-1000'}>
+            <div className="flex items-center justify-between py-4 px-5 dark:text-white bg-white dark:bg-gray-800">
+              <h3 className=' font-bold  uppercase '>
+                Menu
+              </h3>
+
+              <div onClick={handleClick} className="block sm:hidden">
+                {nav && <FaTimes className=' ease-in-out duration-700' size={20} />}
+
+
+              </div>
+            </div>
+
+            <div className=" bg-white dark:bg-gray-800 dark:text-white h-[100vh] px-2">
+              <ul >
+                <li className={`p-3 cursor-pointer  `} ><Link href='/'>Home</Link></li>
+                <li className={`p-3 cursor-pointer  `}><Link href='/'>Who We Are</Link></li>
+                <li className={`p-3 cursor-pointer `}> <Link href='/songs' >Past project </Link></li>
+                <li className={`p-3 cursor-pointer `}> <Link href='/booking'>SERVICES</Link> </li>
+              </ul>
+              <div className='border-2 flex flex-row w-[50%]  justify-center gap-2 h-10 shrink-0 items-center p-2
+          border-[#7FFFFF] rounded-[50%] text-gray-300 cursor-pointer'><Link href='/booking'>BOOK A SESSION</Link></div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+
+
+
+  )
+}
+
+export default MainNav
